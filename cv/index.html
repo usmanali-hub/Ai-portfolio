@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usman Ali - AI Engineer CV (LLMs, RAG, AI Agents, Full-Stack)</title>
+  <meta name="description" content="Resume of Usman Ali - AI Engineer specializing in LLMs, RAG pipelines, Autonomous Agents, Full-Stack Web Development, and Machine Learning.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-dark: #3730A3;
+      --accent: #0284C7;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-light: #64748B;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --border-accent: #CBD5E1;
+      --tag-bg: #EEF2FF;
+      --tag-text: #4338CA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+      font-size: 14px;
+      padding: 40px 20px;
+    }
+
+    /* Floating Toolbar */
+    .toolbar {
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .toolbar-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolbar-title .badge {
+      background: #DCFCE7;
+      color: #166534;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 700;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      margin-left: 8px;
+    }
+
+    .btn-outline:hover {
+      background: #F1F5F9;
+    }
+
+    /* Resume Document Container */
+    .resume-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 56px 60px;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Header */
+    .resume-header {
+      border-bottom: 2px solid #E0E7FF;
+      padding-bottom: 24px;
+      margin-bottom: 26px;
+    }
+
+    .name-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    h1.candidate-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #1E1B4B;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .target-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .resume-section {
+      margin-bottom: 24px;
+    }
+
+    .section-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1E1B4B;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #F1F5F9;
+    }
+
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 14px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .summary-text {
+      color: #334155;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .summary-text strong {
+      color: #0F172A;
+    }
+
+    /* Skills Grid */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .skill-category {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      align-items: baseline;
+      padding: 6px 0;
+      border-bottom: 1px dotted #F1F5F9;
+    }
+
+    .skill-cat-name {
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: #312E81;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .skill-items {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .skill-items strong {
+      color: #0F172A;
+    }
+
+    /* Experience Items */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .exp-item {
+      position: relative;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .role-company {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .role-company .company {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .role-company .badge-tag {
+      font-size: 0.7rem;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .exp-date-loc {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-light);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .exp-bullets {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 6px;
+    }
+
+    .exp-bullets li {
+      color: #334155;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 4px;
+    }
+
+    .exp-bullets li strong {
+      color: #0F172A;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .proj-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #1E1B4B;
+    }
+
+    .proj-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .proj-desc {
+      font-size: 0.86rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .proj-desc strong {
+      color: #0F172A;
+    }
+
+    /* Education & Certifications 2-Column */
+    .edu-cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .edu-block, .cert-block {
+      background: #FFFFFF;
+    }
+
+    .degree-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .school-name {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .cert-list {
+      list-style: none;
+    }
+
+    .cert-list li {
+      font-size: 0.85rem;
+      color: #334155;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .cert-bullet {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Print Stylesheet (Clean PDF Export) */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        padding: 0 !important;
+        font-size: 12.5px;
+      }
+      .toolbar {
+        display: none !important;
+      }
+      .resume-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+      .resume-section {
+        margin-bottom: 18px !important;
+      }
+      .project-card {
+        background: transparent !important;
+        border: 1px solid #CBD5E1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print & Utility Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-title">
+      <span>Usman Ali &mdash; AI Engineer CV</span>
+      <span class="badge">ATS & Executive Optimized</span>
+    </div>
+    <div>
+      <button class="btn-action" onclick="window.print();">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 6 2 18 2 18 9"/>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+          <rect width="12" height="8" x="6" y="14"/>
+        </svg>
+        <span>Print to PDF</span>
+      </button>
+      <a href="Usman_Ali_AI_Engineer_CV.md" download class="btn-action btn-outline">
+        <span>Download Markdown</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Resume Document -->
+  <div class="resume-container">
+    <!-- Header -->
+    <header class="resume-header">
+      <div class="name-title-row">
+        <div>
+          <h1 class="candidate-name">Usman Ali</h1>
+          <div class="target-role">AI Engineer &bull; LLMs, RAG Architectures &amp; Autonomous Agents</div>
+        </div>
+      </div>
+
+      <div class="contact-bar">
+        <span class="contact-item">
+          <strong>Location:</strong> Islamabad, Pakistan (Remote Worldwide)
+        </span>
+        <span class="contact-item">&bull;</span>
+        <span class="contact-item">
+          <strong>Phone:</strong> +92 320 1511321
+        </span>
+        <span class="contact-item">&bull;</span>
+        <span class="contact-item">
+          <strong>Email:</strong> <a href="mailto:work.usmanali@gmail.com">work.usmanali@gmail.com</a>
+        </span>
+        <span class="contact-item">&bull;</span>
+        <span class="contact-item">
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/usman-ali-ai-engineer/" target="_blank">linkedin.com/in/usman-ali-ai-engineer</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Summary</h2>
+      <p class="summary-text">
+        High-impact <strong>AI Engineer</strong> holding a <strong>BS in Artificial Intelligence</strong> with demonstrated production success designing and shipping <strong>Large Language Model (LLM) applications, Retrieval-Augmented Generation (RAG) pipelines, autonomous AI agents, and resilient full-stack web platforms</strong>. Proven record co-founding <strong>ReplyPops</strong> (live commercial product), engineering predictive analytics microservices serving <strong>100+ daily financial traders</strong> at XEN Trades Group, and building custom model evaluation frameworks that identified hidden sub-segment accuracy regressions prior to release. Certified in <strong>AWS Agentic AI</strong> and <strong>Claude Architecture</strong>. Adept at bridging modern AI research with scalable, high-throughput web and cloud backends.
+      </p>
+    </section>
+
+    <!-- Core Technical Skills Matrix -->
+    <section class="resume-section">
+      <h2 class="section-heading">Technical Skills &amp; Domain Expertise</h2>
+      <div class="skills-matrix">
+        <div class="skill-category">
+          <span class="skill-cat-name">LLMs &amp; Generative AI</span>
+          <span class="skill-items"><strong>Claude 3.5 Sonnet, GPT-4o, Llama 3, Gemini</strong>, Prompt Engineering, Structured JSON Outputs (Pydantic), In-Context Learning, Context Caching, Token Optimization</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-cat-name">RAG &amp; Vector Search</span>
+          <span class="skill-items"><strong>Retrieval-Augmented Generation</strong>, Dense &amp; Sparse Hybrid Search (BM25 + Vector), <strong>ChromaDB, Pinecone, pgvector</strong>, Cross-Encoder Re-Ranking, Grounding, Hallucination Mitigation</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-cat-name">AI Agents &amp; Chatbots</span>
+          <span class="skill-items"><strong>Multi-Agent Systems</strong>, Tool/Function Calling, Short &amp; Long-Term Memory, <strong>n8n Agentic Automation</strong>, Human-in-the-Loop (HITL) Guardrails, Conversational Copilots</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-cat-name">Machine Learning</span>
+          <span class="skill-items"><strong>PyTorch, Scikit-learn, TensorFlow</strong>, Supervised &amp; Deep Learning, Model Validation (Precision, Recall, ROC-AUC), Segment-Level Regression Diagnostics, Time-Series</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-cat-name">Full-Stack &amp; Web</span>
+          <span class="skill-items"><strong>React.js, Next.js, TypeScript</strong>, JavaScript, <strong>Python (FastAPI, Flask)</strong>, Node.js, C# / .NET Core 8, REST &amp; gRPC APIs, Microservices, WebSockets</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-cat-name">Databases &amp; Cloud</span>
+          <span class="skill-items"><strong>PostgreSQL, ClickHouse (OLAP), MongoDB, DynamoDB</strong>, Redis, RabbitMQ, Redpanda / Kafka, <strong>AWS (Agentic AI Certified)</strong>, Docker, Git, CI/CD</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Experience</h2>
+      <div class="experience-list">
+
+        <!-- Role 1: ReplyPops -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="role-company">
+              Co-Founder &amp; AI Product Engineer &bull; <span class="company">ReplyPops</span> <span class="badge-tag">replypops.com</span>
+            </div>
+            <div class="exp-date-loc">2026 &ndash; Present | Islamabad, PK</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Architected and shipped the <strong>ReplyPops AI engagement platform</strong> from initial architectural blueprint to live commercial launch, handling FBR registration and onboarding.</li>
+            <li>Engineered <strong>LLM generation &amp; classification pipelines</strong> using Claude and OpenAI APIs with strict Pydantic JSON schema constraints, achieving <strong>65% faster draft response generation</strong> with high tone precision.</li>
+            <li>Built the full-stack web application using <strong>Next.js, TypeScript, and modern REST backends</strong>, incorporating customer feedback into rapid weekly release cadences.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2: XEN Trades Group -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="role-company">
+              Trading Analyst &amp; Automation / ML Engineer &bull; <span class="company">XEN Trades Group</span>
+            </div>
+            <div class="exp-date-loc">2024 &ndash; 2026 | Remote / Hybrid</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Developed and maintained a real-time predictive analytics and risk visualization platform utilized daily by <strong>100+ active professional traders</strong>.</li>
+            <li>Engineered high-throughput microservices in <strong>C#, .NET Core 8, Python, and gRPC</strong> with <strong>RabbitMQ</strong> asynchronous message queues for streaming live order book depth and telemetry.</li>
+            <li>Architected and tuned data models in <strong>PostgreSQL, ClickHouse, and MongoDB</strong>, optimizing complex analytical aggregation queries to achieve <strong>sub-second dashboard render speeds</strong>.</li>
+            <li>Automated market data ingestion pipelines and authoring comprehensive integration and regression test suites.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3: Glaxit -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="role-company">
+              AI Specialist Intern &bull; <span class="company">Glaxit</span>
+            </div>
+            <div class="exp-date-loc">Hybrid</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Trained, fine-tuned, and benchmarked machine learning and deep learning models in <strong>Python (PyTorch, Scikit-learn)</strong> for integration into client production systems.</li>
+            <li>Built a custom Python evaluation framework that computed accuracy, precision, and recall per discrete data segment; <strong>uncovered an 11-point accuracy drop in a specific segment hidden behind a 4-point overall gain</strong>, holding back the model from deployment until corrected.</li>
+            <li>Cleaned, curated, and augmented training datasets, establishing reproducibility tracking in Git.</li>
+          </ul>
+        </div>
+
+        <!-- Role 4: EcoServants -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="role-company">
+              Data Analysis and Research Intern &bull; <span class="company">EcoServants (Ecological Servants Project)</span>
+            </div>
+            <div class="exp-date-loc">Remote</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Queried, normalized, and validated large ecological datasets using SQL, constructing structured time-series tables for the Community Site Report engine.</li>
+            <li>Built an interactive web dashboard in JavaScript and PHP enabling non-technical field operators to dynamically prioritize intervention sites based on predictive impact metrics.</li>
+          </ul>
+        </div>
+
+        <!-- Role 5: Mega Code War -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="role-company">
+              Technical Director &bull; <span class="company">Mega Code War 4.0, HITEC University</span>
+            </div>
+            <div class="exp-date-loc">Taxila, PK</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Engineered registration systems and data pipelines for Pakistan's largest university coding competition (<strong>360+ registered participants</strong>), managing zero-downtime server operations on competition day.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Key Featured Projects -->
+    <section class="resume-section">
+      <h2 class="section-heading">Featured AI &amp; Engineering Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-title-row">
+            <span class="proj-title">Autonomous Multi-Agent Lead Qualification &amp; Routing System</span>
+            <span class="proj-stack">n8n &bull; Claude API &bull; Webhooks &bull; Python</span>
+          </div>
+          <p class="proj-desc">
+            Engineered an autonomous workflow agent validating webhook payloads, evaluating leads against a 1&ndash;10 rubric using the <strong>Claude API</strong>, generating personalized contextual follow-up emails, and routing high-priority opportunities to sales with a <strong>human-in-the-loop review safeguard</strong>.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-title-row">
+            <span class="proj-title">TickerLake &mdash; Real-Time Streaming Telemetry &amp; Analytics Pipeline</span>
+            <span class="proj-stack">Python &bull; Redpanda / Kafka &bull; ClickHouse OLAP &bull; WebSockets</span>
+          </div>
+          <p class="proj-desc">
+            Built an event-driven streaming pipeline ingesting live order book and trade streams from Binance and Coinbase through <strong>Redpanda into ClickHouse</strong>, complete with deduplication, dead-letter queue routing, and automated continuous testing.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-title-row">
+            <span class="proj-title">Enterprise Knowledge Base RAG &amp; Chatbot System</span>
+            <span class="proj-stack">Python &bull; FastAPI &bull; Vector Embeddings &bull; React.js</span>
+          </div>
+          <p class="proj-desc">
+            Architected a production-ready conversational RAG platform combining <strong>dense semantic embeddings and BM25 sparse keyword search</strong> with cross-encoder re-ranking and verifiable source citations, reducing hallucination rates by &gt;85%.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="resume-section">
+      <div class="edu-cert-grid">
+        <div class="edu-block">
+          <h2 class="section-heading">Education</h2>
+          <div class="degree-name">Bachelor of Science in Artificial Intelligence (BS AI)</div>
+          <div class="school-name">HITEC University, Taxila, Pakistan</div>
+        </div>
+
+        <div class="cert-block">
+          <h2 class="section-heading">Certifications &amp; Awards</h2>
+          <ul class="cert-list">
+            <li><span class="cert-bullet">&#10003;</span> <strong>Introduction to Agentic AI on AWS</strong> &ndash; Certificate</li>
+            <li><span class="cert-bullet">&#10003;</span> <strong>Claude Architecture &amp; Prompt Engineering</strong> &ndash; Certification</li>
+            <li><span class="cert-bullet">&#10003;</span> <strong>1st Position Champion</strong> &ndash; National Competition, NUST</li>
+            <li><span class="cert-bullet">&#10003;</span> <strong>1st Position</strong> &ndash; Inter-Department Coding, HITEC University</li>
+            <li><span class="cert-bullet">&#10003;</span> <strong>Certified Web Development Trainer</strong> &ndash; Anam Foundation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
