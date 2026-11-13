@@ -7157,38 +7157,15 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
 
 
 
-    <div class="chat-messages" id="chatMessages">
-
-
-
-      <div class="chat-msg bot">Hi! I'm Usman's portfolio assistant. Ask me anything about his macro analytics, trading risk models, ML pipelines, or experience.</div>
-
-
-
+        <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">Hi! I'm Usman's AI Assistant. Ask me about his role as Co-Founder &amp; CTO at ReplyPops, his open-source AI &amp; RAG repos on GitHub, his 12 certifications, or forward-deployed AI engineering!</div>
     </div>
-
-
-
     <div class="chat-suggestions">
-
-
-
-      <button class="chat-chip" data-q="Tell me about Macro Pulse">Macro Pulse</button>
-
-
-
-      <button class="chat-chip" data-q="What is your trading risk model?">Trading Risk</button>
-
-
-
-      <button class="chat-chip" data-q="How do you evaluate ML models?">ML Scorer</button>
-
-
-
+      <button class="chat-chip" data-q="Tell me about ReplyPops">ReplyPops CTO</button>
+      <button class="chat-chip" data-q="Tell me about rag-knowledge-assistant">RAG Engine</button>
+      <button class="chat-chip" data-q="What AI certifications does Usman have?">Certifications</button>
+      <button class="chat-chip" data-q="What can Usman build for us?">What He Builds</button>
       <button class="chat-chip" data-q="How can I contact Usman?">Contact</button>
-
-
-
     </div>
 
 
@@ -8849,134 +8826,74 @@ document.querySelectorAll(".exp__head").forEach(btn=>{
 
 
 
-  const responses = [
-
-
-
+    const responses = [
     // Greetings & Small Talk
-
-
-
-    { id: "greetings", keywords: ["hi", "hello", "hey", "greetings", "good morning", "good afternoon", "good evening", "hi there", "hello usman"], answer: "Hello! I'm Usman's portfolio AI assistant. How can I help you today? Ask me about his Macro Pulse model, trading risk analytics, GlaxIT ML scorer, role fit for Data Analyst positions, or how to contact him!" },
-
-
-
-    { id: "how_are_you", keywords: ["how are u", "how are you", "how r u", "hows it going", "how is it going", "whats up", "sup", "how do you do"], answer: "I'm doing great, thank you! I'm here to answer any questions about Usman Ali's work in economic analysis, market & trading analytics, and AI engineering. What would you like to know?" },
-
-
-
-    { id: "who_are_you", keywords: ["who are you", "what are you", "what is this", "bot", "assistant"], answer: "I'm Usman Ali's interactive portfolio AI assistant! I can answer questions about his 19-month Macro Pulse model, trading risk analysis at XEN Trades, GlaxIT ML scorer, education, skills, role fit, and contact details." },
-
-
-
-    { id: "what_can_you_do", keywords: ["what can you do", "help", "options", "questions", "capabilities", "features"], answer: "I can answer questions about: 1. Flagship projects (MacroPulse, Trading Risk, GlaxIT ML Scorer, ReplyPops), 2. Role fit for Data Analyst & AI roles, 3. Operations & customer support analytics, 4. Education & certifications, and 5. Contact information!" },
-
-
-
-    { id: "thanks", keywords: ["thanks", "thank you", "thx", "awesome", "great", "cool", "perfect", "good job"], answer: "You're very welcome! Let me know if you have any other questions about Usman's portfolio." },
-
-
-
+    { id: "greetings", keywords: ["hi", "hello", "hey", "greetings", "good morning", "good afternoon", "good evening", "hi there", "hello usman"], answer: "Hello! I'm Usman's portfolio AI assistant. How can I help you today? Ask me about his role as Co-Founder & CTO at ReplyPops, his open-source RAG & LLM tools on GitHub, his 12 certifications from Google & AWS, or his forward-deployed AI engineering!" },
+    { id: "how_are_you", keywords: ["how are u", "how are you", "how r u", "hows it going", "how is it going", "whats up", "sup", "how do you do"], answer: "I'm doing great, thank you! I'm here to answer any questions about Usman Ali's work as a CTO, AI Engineer, and Forward Deployed Engineer. What would you like to know?" },
+    { id: "who_are_you", keywords: ["who are you", "what are you", "what is this", "bot", "assistant"], answer: "I'm Usman Ali's interactive portfolio AI assistant! I can answer questions about his AI systems, RAG assistant, LLM utilities, ReplyPops CTO leadership, forward deployed engineering at XEN Groups, 12 certifications, and contact details." },
+    { id: "what_can_you_do", keywords: ["what can you do", "help", "options", "questions", "capabilities", "features"], answer: "I can answer questions about: 1. Technical leadership as Co-Founder & CTO at ReplyPops, 2. Open-source AI repositories (rag-knowledge-assistant, python-llm-utils, ml-end-to-end), 3. Forward Deployed Engineering at XEN Groups, 4. 12 Professional Certifications from Google, AWS & Coursera, and 5. Contact & hiring availability!" },
+    { id: "thanks", keywords: ["thanks", "thank you", "thx", "awesome", "great", "cool", "perfect", "good job"], answer: "You're very welcome! Let me know if you have any other questions about Usman's portfolio or AI projects." },
     { id: "bye", keywords: ["bye", "goodbye", "cya", "see you", "take care"], answer: "Goodbye! Thanks for visiting Usman Ali's portfolio. Have a great day!" },
 
-
-
-
-
-
-
     // Intent: Who is Usman / Bio / Location
-
-
-
-    { id: "who_is_usman", keywords: ["who is usman", "who is he", "who", "about", "bio", "background", "summary", "tell me about usman", "location", "pakistan", "rawalpindi", "where is he"], answer: "Usman Ali is an Economic Analyst, Market & Trading Analyst, and AI Engineer based in Rawalpindi, Pakistan. He is currently pursuing a BS in Artificial Intelligence at HITEC University (2023–2027) while running Macro Pulse and co-founding ReplyPops." },
-
-
-
-
-
-
+    { id: "who_is_usman", keywords: ["who is usman", "who is he", "who", "about", "bio", "background", "summary", "tell me about usman", "location", "pakistan", "islamabad", "rawalpindi", "where is he"], answer: "Usman Ali is the Co-Founder & CTO at ReplyPops, an AI Engineer, and a Forward Deployed Engineer based in Pakistan. He is currently pursuing a BS in Artificial Intelligence at HITEC University (2023–2027) while architecting production RAG systems, autonomous multi-agent pipelines, and cloud AI integrations." },
 
     // Intent: Best Work / Top Projects
+    { id: "best_work", keywords: ["best work", "best project", "his best", "hus best", "top work", "top project", "flagship", "best build", "best asset", "highlight", "main project", "best", "projects", "work"], answer: "Usman's standout work includes: 1. Co-Founding and serving as CTO for ReplyPops (platform architecture, pre-launch QA, and defect reduction), 2. rag-knowledge-assistant (hybrid dense/sparse vector search with BM25, NumPy, citations, and eval suite), 3. python-llm-utils (typed ChatRequest orchestration and prompt token estimation), 4. ml-end-to-end (supervised churn classification pipeline), and 5. MacroPulse (19-month macro liquidity model)." },
 
+    // Intent: ReplyPops CTO Leadership
+    { id: "replypops", keywords: ["replypops", "cto", "cofounder", "co-founder", "founder", "qa", "testing", "beta", "edge", "prelaunch", "defect", "stress test"], answer: "As Co-Founder & CTO at ReplyPops, Usman directs platform technical architecture, system scalability, and pre-launch QA engineering. He stress-tested platform onboarding, messaging, and notification workflows, hardening stability and reducing edge-case defect rates by 38%." },
 
+    // Intent: RAG Knowledge Assistant
+    { id: "rag", keywords: ["rag", "retrieval", "vector", "embeddings", "bm25", "hybrid search", "knowledge assistant", "rag-knowledge-assistant"], answer: "Usman built 'rag-knowledge-assistant' (github.com/usmanali-hub/rag-knowledge-assistant), an open-source Python toolkit combining dense cosine vector search with sparse BM25 term weighting via Reciprocal Rank Fusion (RRF). It runs offline with NumPy, features strict in-line citation grounding to eliminate hallucinations, and includes an automated evaluation harness testing Precision@K, Recall@K, and MRR." },
 
-    { id: "best_work", keywords: ["best work", "best project", "his best", "hus best", "top work", "top project", "flagship", "best build", "best asset", "highlight", "main project", "best", "projects", "work"], answer: "Usman's flagship project is MacroPulse, a 19-month USD macro liquidity scoring dashboard built with Python and FRED API data. Other standout builds include his Trading Risk & Performance backtest suite for XEN Trades, GlaxIT's Segment-Level ML Evaluation framework, and ReplyPops QA testing." },
+    // Intent: Python LLM Utils
+    { id: "llm_utils", keywords: ["llm utils", "llm-utils", "python-llm-utils", "token", "prompt", "chatrequest", "templating"], answer: "'python-llm-utils' is Usman's typed, tested Python package (v0.1.0) on GitHub (github.com/usmanali-hub/python-llm-utils) providing ChatRequest schema normalization across LLM providers, dynamic prompt templating, fast byte-pair token counting, and strict mypy verification checked in multi-OS GitHub Actions CI." },
 
+    // Intent: Autonomous Agents & n8n
+    { id: "agents", keywords: ["agents", "n8n", "claude", "langgraph", "automation", "agentic", "pipeline", "workflow", "triage", "lead routing"], answer: "Usman designs deterministic multi-agent loops and enterprise automations using n8n Cloud, Claude 3.5 Sonnet, and LangGraph. Flagship builds include automated support ticket triage, AI lead qualification & CRM routing, candidate evaluation, and automated content repurposing." },
 
+    // Intent: Forward Deployed Engineering & XEN Groups
+    { id: "forward_deployed", keywords: ["forward deployed", "xen", "xen groups", "client", "stakeholder", "apis", "fastapi", "integrations"], answer: "As a Forward Deployed Engineer at XEN Groups (Aug 2024 – Present, 2+ yrs), Usman works directly with business stakeholders to translate domain requirements into high-impact AI automation solutions, deploying REST APIs in FastAPI, autonomous agents, and automated data pipelines." },
 
+    // Intent: Machine Learning Pipeline
+    { id: "ml_ai", keywords: ["ml", "machine learning", "ai", "evaluation", "scorer", "glaxit", "model", "scikit", "pytorch", "tensorflow", "churn", "ml-end-to-end"], answer: "Usman has built production ML pipelines including 'ml-end-to-end' (reproducible customer churn classification on 7,043 samples with honest baselines and ROC-AUC evaluation) and a segment-level model scorer at GlaxIT that caught an 11-point minority regression hidden behind a 4-point overall gain." },
 
+    // Intent: Certifications
+    { id: "certifications", keywords: ["certifications", "certificate", "credentials", "google", "aws", "coursera", "license", "instant funding", "maven", "prompting", "capstone"], answer: "Usman holds 12 verified professional certifications: 7 from Google (including Maximize Productivity with AI Tools, Use AI Responsibly, The Nuts and Bolts of ML, and Advanced Data Analytics Capstone), Introduction to Agentic AI on AWS (multi-agent loops & Bedrock), Coursera prompt engineering & project management, and quantitative risk certificates from Instant Funding and Maven Trading." },
 
+    // Intent: GitHub Repositories
+    { id: "github", keywords: ["github", "repos", "repositories", "open source", "code", "usmanali-hub", "git"], answer: "Usman maintains 15 public repositories on GitHub (github.com/usmanali-hub). His featured repos include rag-knowledge-assistant, python-llm-utils, ml-end-to-end, Ai-engineering-notes, sql-analytics-project, data-analysis-pipeline, Macro-Market-Intelligence, and Customer-Support-Analytics — all backed by CI/CD workflows." },
 
-
-    // Intent: Data Analyst / Role Fit / Hiring / Availability
-
-
-
-    { id: "role_fit", keywords: ["data analyst", "good fit", "fit for", "fit", "hire", "why hire", "suitable", "qualified", "is he good fit", "is he fit", "analyst fit", "candidate", "role", "job", "available", "availability", "hiring", "remote", "full time", "part time", "internship"], answer: "Yes! Usman is an ideal candidate for Data Analyst, Financial Risk Analyst, and AI Engineer roles (open to remote & full-time positions). He brings hands-on mastery of Python, SQL, FRED API, Scikit-learn, PyTorch, time-series forecasting, geospatial mapping, and business KPI optimization." },
-
-
-
-
-
-
-
-    // Intent: Is He Good / Quality Proofs
-
-
-
-    { id: "is_he_good", keywords: ["is he good", "is usman good", "how good", "quality", "rating", "competence", "level", "good at what he does", "capable", "strong", "proof"], answer: "Usman is highly capable and evidence-driven. Key proofs of his analytical quality include: 1. Uncovering an 11-point minority segment ML regression hidden behind a 4-point overall gain at GlaxIT, 2. Lowering drawdown while improving expectancy at XEN Trades, 3. Reducing ReplyPops pre-launch edge-case errors by 38%, and 4. Serving as Technical Director for Mega Code War 4.0." },
-
-
-
-
-
-
-
-    // Core Domain Intents
-
-
-
+    // Intent: Macro Pulse & Financial Analytics
     { id: "macro_pulse", keywords: ["macro", "pulse", "macropulse", "liquidity", "fred", "yield", "economy", "scored", "economic", "usd"], answer: "MacroPulse is Usman's standing liquidity-conditions model scoring 19 months of USD macro releases across Treasury deficits, Fed balance sheet changes, interest rates, and global M2 to identify sustained market trends." },
 
+    // Intent: Trading Risk Analytics
+    { id: "trading_risk", keywords: ["trading", "risk", "drawdown", "expectancy", "backtest", "portfolio", "strategy", "trader", "traders"], answer: "In his algorithmic trading analytics work, Usman modeled trade expectancy, drawdown curves, tail risks, and profit factors, translating discretionary strategies into explicit rules-based Python backtests and coaching 10+ traders on risk rules." },
 
-
-    { id: "trading_risk", keywords: ["trading", "risk", "drawdown", "expectancy", "xen", "backtest", "portfolio", "strategy", "trader", "traders"], answer: "At XEN Trades Group, Usman translated discretionary price-action strategies into explicit rules-based Python backtests. He evaluates expectancy, drawdown curves, tail risks, and profit factors, having coached 10+ traders on risk rules." },
-
-
-
-    { id: "ml_ai", keywords: ["ml", "machine learning", "ai", "evaluation", "scorer", "glaxit", "aws", "agentic", "model", "scikit", "pytorch", "tensorflow"], answer: "During his AI internship at GlaxIT, Usman built a segment-level model evaluation scorer in Python that caught an 11-point regression on a minority data segment hidden behind a 4-point overall gain. He is also certified in Agentic AI on AWS." },
-
-
-
+    // Intent: Customer Support Operations
     { id: "customer_support", keywords: ["customer", "support", "sla", "csat", "operations", "kpi", "tickets", "ticket", "response time"], answer: "Usman built a Customer Support Operations pipeline analyzing ticket demand, SLA attainment, first-response times, CSAT scores, and reopen rates — tracing escalation bottlenecks to priority-tag mismatches." },
 
+    // Intent: EcoServants & Environmental Data
+    { id: "ecoservants", keywords: ["ecoservants", "invasive", "geospatial", "plants", "survey", "water", "species", "eco", "csr"], answer: "At EcoServants, Usman queries and validates environmental datasets using SQL and Python, contributing geospatial logic to the Community Site Report (CSR) system and building interactive web dashboards in JavaScript and PHP." },
 
-
-    { id: "ecoservants", keywords: ["ecoservants", "invasive", "geospatial", "plants", "survey", "water", "species", "eco"], answer: "At EcoServants, Usman joined SQL survey tables into a per-site invasive-density time series and mapped them geospatially, revealing that invasive plant spread concentrated around a single shared water channel." },
-
-
-
-    { id: "replypops", keywords: ["replypops", "qa", "testing", "beta", "edge", "co-founder", "cofounder", "founder", "prelaunch", "defect"], answer: "As Co-Founder & CTO at ReplyPops, Usman leads platform architecture and stress-tested pre-launch workflows across onboarding, messaging, and notifications, hardening stability and reducing defect rates." },
-
-
-
+    // Intent: Education
     { id: "education", keywords: ["education", "degree", "bs", "university", "hitec", "gcu", "school", "study", "student", "matric", "fsc", "college"], answer: "Usman is pursuing a BS in Artificial Intelligence at HITEC University (2023–2027). He previously completed FSc Pre-Engineering at GCU Lahore and SSC Matriculation at Watan Ideal High School." },
 
+    // Intent: Leadership
+    { id: "leadership", keywords: ["director", "code war", "leadership", "event", "technical director", "mega code war"], answer: "Usman served as Technical Director for Mega Code War 4.0 at HITEC University, directing technical operations, testing infrastructure, and team coordination under fixed event deadlines." },
 
+    // Intent: Skills & Tech Stack
+    { id: "skills", keywords: ["skills", "python", "sql", "tools", "tableau", "pytorch", "tensorflow", "stack", "tech", "languages", "fastapi", "docker"], answer: "Usman's tech stack includes: Python, FastAPI, PyTorch, Scikit-learn, TensorFlow, Hugging Face, RAG & Vector Search (Chroma, Pinecone, Qdrant), LangGraph, n8n Cloud, SQL (PostgreSQL, CTEs, Window Functions), Docker, Git/GitHub, and AWS Agentic AI." },
 
-    { id: "leadership", keywords: ["director", "code war", "leadership", "event", "technical director", "mega code war"], answer: "Usman served as Technical Director for Mega Code War 4.0 at HITEC University, leading technical operations, infrastructure, and team coordination under fixed event deadlines." },
+    // Intent: Role Fit / Hiring / Availability
+    { id: "role_fit", keywords: ["data analyst", "good fit", "fit for", "fit", "hire", "why hire", "suitable", "qualified", "is he good fit", "is he fit", "candidate", "role", "job", "available", "availability", "hiring", "remote", "full time", "part time", "ai engineer"], answer: "Yes! Usman is an exceptional candidate for AI Engineer, Machine Learning Engineer, Forward Deployed Engineer, and AI Automation roles (open to remote & full-time positions). He combines startup CTO leadership at ReplyPops with hands-on production expertise across RAG, LLM utilities, FastAPI, and data engineering." },
 
+    // Intent: Is He Good / Quality Proofs
+    { id: "is_he_good", keywords: ["is he good", "is usman good", "how good", "quality", "rating", "competence", "level", "good at what he does", "capable", "strong", "proof"], answer: "Usman is proven, highly capable, and evidence-driven. Key proofs include: 1. Co-Founding and architecting ReplyPops (reducing pre-launch defect rates by 38%), 2. 2+ years as Forward Deployed Engineer at XEN Groups deploying scalable AI tools, 3. Uncovering an 11-point minority segment ML regression hidden behind a 4-point overall gain at GlaxIT, 4. Publishing 15 verified GitHub repos with CI/CD, and 5. Serving as Technical Director for Mega Code War 4.0." },
 
-
-    { id: "skills", keywords: ["skills", "python", "sql", "tools", "tableau", "pytorch", "tensorflow", "excel", "stack", "tech", "languages", "programming"], answer: "Usman's technical stack includes Python, SQL, FRED API, Scikit-Learn, PyTorch, TensorFlow, PostgreSQL, Tableau, Time Series Forecasting, Geospatial Analysis, and Agentic AI." },
-
-
-
-    { id: "contact", keywords: ["contact", "email", "reach", "hire", "linkedin", "github", "phone", "whatsapp", "number", "call", "mobile", "cell", "phone number", "whatsapp number", "address", "mail"], answer: "You can reach Usman directly via WhatsApp (wa.me/923201511321), email at work.usmanali@gmail.com, view his code on GitHub (usmanali-hub), or connect on LinkedIn (linkedin.com/in/usman-ali-ai-engineer)." }
-
-
-
+    // Intent: Contact
+    { id: "contact", keywords: ["contact", "email", "reach", "hire", "linkedin", "github", "phone", "whatsapp", "number", "call", "mobile", "cell", "phone number", "whatsapp number", "address", "mail"], answer: "You can reach Usman directly via WhatsApp (wa.me/923201511321), email at work.usmanali@gmail.com, view his code on GitHub (github.com/usmanali-hub), or connect on LinkedIn (linkedin.com/in/usman-ali-ai-engineer)." }
   ];
 
 
@@ -9285,7 +9202,7 @@ document.querySelectorAll(".exp__head").forEach(btn=>{
 
 
 
-        addMsg("I am specialized in answering questions about Usman Ali's portfolio! Feel free to ask about his Macro Pulse model, trading risk analysis, GlaxIT ML scorer, ReplyPops QA, education, skills, candidate fit, or contact details.", "bot");
+        addMsg("I am specialized in answering questions about Usman Ali's portfolio! Feel free to ask about his role as Co-Founder & CTO at ReplyPops, his RAG & LLM systems on GitHub, forward-deployed engineering at XEN Groups, 12 certifications, or how to contact him.", "bot");
 
 
 
