@@ -2785,6 +2785,7 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
 
 <!-- GitHub Repositories Section -->
 <!-- GitHub Repositories Section (9 Repositories) -->
+<!-- GitHub Repositories Section (9 Repositories with Unique Artworks) -->
 <section id="github">
   <div class="wrap">
     <div class="shead defer from-down">
@@ -2799,20 +2800,56 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
         <div class="gh-viz">
           <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
             <defs>
-              <linearGradient id="cyan-glow-rag" x1="0%" y1="0%" x2="0%" y2="100%">
+              <linearGradient id="rag-fusion-glow" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.4"/>
-                <stop offset="60%" stop-color="#00E5FF" stop-opacity="0.08"/>
-                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                <stop offset="100%" stop-color="#FFD600" stop-opacity="0.1"/>
               </linearGradient>
             </defs>
-            <line x1="0" y1="130" x2="300" y2="130" stroke="#1F2430" stroke-width="1"/>
-            <polygon points="0,95 35,90 70,65 105,75 140,45 175,55 210,30 245,40 280,18 300,15 300,130 0,130" fill="url(#cyan-glow-rag)"/>
-            <polyline points="0,110 35,105 70,112 105,95 140,98 175,85 210,88 245,70 280,60 300,55" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="4 3" class="chart-flow-slow" style="filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.8));"/>
-            <polyline points="0,95 35,90 70,65 105,75 140,45 175,55 210,30 245,40 280,18 300,15" fill="none" stroke="#00E5FF" stroke-width="2.6" class="chart-flow-cyan" style="filter: drop-shadow(0 0 8px #00E5FF) drop-shadow(0 0 16px rgba(0, 229, 255, 0.8));"/>
-            <circle cx="140" cy="45" r="5" fill="#00E5FF" class="neon-pulse" style="filter: drop-shadow(0 0 10px #00E5FF);"/>
-            <circle cx="210" cy="30" r="5.5" fill="#FBBF24" class="neon-pulse-gold" style="filter: drop-shadow(0 0 12px #FBBF24);"/>
-            <circle cx="280" cy="18" r="5" fill="#00E5FF" class="neon-pulse" style="filter: drop-shadow(0 0 10px #00E5FF);"/>
-            <text x="8" y="20" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));">VECTOR SEARCH &amp; BM25 FUSION</text>
+            <text x="8" y="18" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));">VECTOR RETRIEVAL &amp; RRF FUSION</text>
+            <text x="8" y="30" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7.5">DENSE COSINE + SPARSE BM25</text>
+
+            <!-- Dense Vector Cluster (Top Left) -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7" fill="#00E5FF">
+              <rect x="12" y="44" width="76" height="26" rx="4" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="3 2" style="filter: drop-shadow(0 0 5px #00E5FF);"/>
+              <text x="18" y="56" fill="#00E5FF" font-weight="600">DENSE VECTOR</text>
+              <text x="18" y="65" fill="#A1A1AA">cosine sim 0.94</text>
+              <circle cx="95" cy="57" r="4" fill="#00E5FF" class="neon-pulse"/>
+            </g>
+
+            <!-- Sparse BM25 Cluster (Bottom Left) -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7" fill="#F59E0B">
+              <rect x="12" y="96" width="76" height="26" rx="4" fill="none" stroke="#F59E0B" stroke-width="1.2" stroke-dasharray="3 2" style="filter: drop-shadow(0 0 5px #F59E0B);"/>
+              <text x="18" y="108" fill="#F59E0B" font-weight="600">BM25 INDEX</text>
+              <text x="18" y="117" fill="#A1A1AA">term freq rank</text>
+              <circle cx="95" cy="109" r="4" fill="#F59E0B" class="neon-pulse-gold"/>
+            </g>
+
+            <!-- Converging Connection Beams to Central RRF Node -->
+            <path d="M99,57 C130,57 125,85 145,85" fill="none" stroke="#00E5FF" stroke-width="1.8" class="chart-flow-cyan"/>
+            <path d="M99,109 C130,109 125,85 145,85" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="4 2" class="chart-flow-slow"/>
+
+            <!-- Central RRF Node (Center) -->
+            <polygon points="152,70 167,85 152,100 137,85" fill="none" stroke="#00E676" stroke-width="2" style="filter: drop-shadow(0 0 8px #00E676);"/>
+            <circle cx="152" cy="85" r="4" fill="#00E676" class="neon-pulse"/>
+            <text x="135" y="112" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="7" font-weight="600">RRF FUSION</text>
+
+            <!-- Output Flow to Grounded Citations (Right) -->
+            <line x1="167" y1="85" x2="205" y2="85" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="3 2" class="chart-flow-white"/>
+
+            <!-- Document Citation Cards -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7">
+              <rect x="208" y="44" width="80" height="22" rx="3" fill="#121418" stroke="#00E5FF" stroke-width="1"/>
+              <circle cx="216" cy="55" r="2.5" fill="#00E5FF"/>
+              <text x="224" y="58" fill="#E4E4E7">[Doc 1] 98.2%</text>
+
+              <rect x="208" y="74" width="80" height="22" rx="3" fill="#121418" stroke="#00E676" stroke-width="1"/>
+              <circle cx="216" cy="85" r="2.5" fill="#00E676"/>
+              <text x="224" y="88" fill="#E4E4E7">[Doc 2] 94.7%</text>
+
+              <rect x="208" y="104" width="80" height="22" rx="3" fill="#121418" stroke="#A1A1AA" stroke-width="0.8"/>
+              <circle cx="216" cy="115" r="2.5" fill="#A1A1AA"/>
+              <text x="224" y="118" fill="#A1A1AA">[Doc 3] 89.1%</text>
+            </g>
           </svg>
         </div>
         <div class="gh-body">
@@ -2828,20 +2865,55 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
       <div class="gh-card spotlight defer from-down">
         <div class="gh-viz">
           <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
-            <defs>
-              <linearGradient id="amber-glow-llm" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FF5722" stop-opacity="0.38"/>
-                <stop offset="70%" stop-color="#FF5722" stop-opacity="0.08"/>
-                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <line x1="0" y1="28" x2="300" y2="28" stroke="#FF5722" stroke-width="2" stroke-dasharray="6 4" class="chart-flow-slow" style="filter: drop-shadow(0 0 6px #FF5722);"/>
-            <polygon points="0,35 25,40 50,58 75,52 100,75 125,68 150,92 175,82 200,105 225,95 250,118 275,108 300,125 300,160 0,160" fill="url(#amber-glow-llm)"/>
-            <polyline points="0,35 25,40 50,58 75,52 100,75 125,68 150,92 175,82 200,105 225,95 250,118 275,108 300,125" fill="none" stroke="#FF5722" stroke-width="2.5" class="chart-flow-slow" style="filter: drop-shadow(0 0 10px #FF5722);"/>
-            <circle cx="100" cy="75" r="5" fill="#FF5722" class="neon-pulse-rose" style="filter: drop-shadow(0 0 10px #FF5722);"/>
-            <circle cx="200" cy="105" r="5.5" fill="#F43F5E" class="neon-pulse-rose" style="filter: drop-shadow(0 0 12px #F43F5E);"/>
-            <circle cx="275" cy="108" r="5" fill="#FF7043" class="neon-pulse-gold" style="filter: drop-shadow(0 0 10px #FF7043);"/>
-            <text x="8" y="18" fill="#FF5722" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.8));">LLM UTILITIES &amp; TOKEN ORCHESTRATION</text>
+            <text x="8" y="18" fill="#FF5722" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.8));">CHATREQUEST &amp; TOKEN ORCHESTRATION</text>
+            <text x="8" y="30" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7.5">TYPED SCHEMA · JINJA RENDER · BPE AUDIT</text>
+
+            <!-- Box 1: ChatRequest Input -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7">
+              <rect x="10" y="50" width="76" height="60" rx="4" fill="#0F1115" stroke="#FF5722" stroke-width="1.4" style="filter: drop-shadow(0 0 6px rgba(255,87,34,0.4));"/>
+              <text x="18" y="66" fill="#FF5722" font-weight="600">ChatRequest</text>
+              <line x1="16" y1="72" x2="80" y2="72" stroke="#27272A" stroke-width="1"/>
+              <text x="18" y="84" fill="#A1A1AA">role: "system"</text>
+              <text x="18" y="94" fill="#A1A1AA">model: "claude"</text>
+              <text x="18" y="104" fill="#00E676">mypy: strict</text>
+            </g>
+
+            <!-- Connector 1 -->
+            <path d="M86,80 L112,80" stroke="#FF5722" stroke-width="1.8" class="chart-flow-slow"/>
+            <polygon points="112,80 106,77 106,83" fill="#FF5722"/>
+
+            <!-- Box 2: Jinja Template Engine -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7">
+              <rect x="114" y="50" width="76" height="60" rx="4" fill="#0F1115" stroke="#FFD600" stroke-width="1.4" style="filter: drop-shadow(0 0 6px rgba(255,214,0,0.4));"/>
+              <text x="122" y="66" fill="#FFD600" font-weight="600">Template</text>
+              <line x1="120" y1="72" x2="184" y2="72" stroke="#27272A" stroke-width="1"/>
+              <text x="122" y="84" fill="#E4E4E7">{{ context }}</text>
+              <text x="122" y="94" fill="#E4E4E7">{{ role_spec }}</text>
+              <text x="122" y="104" fill="#00E676">valid: True</text>
+            </g>
+
+            <!-- Connector 2 -->
+            <path d="M190,80 L216,80" stroke="#FFD600" stroke-width="1.8" class="chart-flow-slow"/>
+            <polygon points="216,80 210,77 210,83" fill="#FFD600"/>
+
+            <!-- Box 3: Token Meter & Histogram -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7">
+              <rect x="218" y="50" width="74" height="60" rx="4" fill="#0F1115" stroke="#00E5FF" stroke-width="1.4" style="filter: drop-shadow(0 0 6px rgba(0,229,255,0.4));"/>
+              <text x="226" y="66" fill="#00E5FF" font-weight="600">Token Audit</text>
+              <line x1="224" y1="72" x2="286" y2="72" stroke="#27272A" stroke-width="1"/>
+              
+              <!-- Token Histogram Bars -->
+              <rect x="226" y="90" width="8" height="15" fill="#00E676"/>
+              <rect x="238" y="82" width="8" height="23" fill="#00E5FF"/>
+              <rect x="250" y="76" width="8" height="29" fill="#FFD600"/>
+              <rect x="262" y="85" width="8" height="20" fill="#FF5722"/>
+
+              <text x="226" y="122" fill="#A1A1AA">1,428 / 4,096 tokens</text>
+            </g>
+
+            <!-- Bottom status badge -->
+            <text x="10" y="142" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="7.5" font-weight="600">✓ 100% PYTEST PASSING</text>
+            <text x="190" y="142" fill="#A1A1AA" font-family="'IBM Plex Mono', monospace" font-size="7.5">v0.1.0 · PYPI READY</text>
           </svg>
         </div>
         <div class="gh-body">
@@ -2857,22 +2929,51 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
       <div class="gh-card spotlight defer from-right">
         <div class="gh-viz">
           <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
-            <text x="8" y="18" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 230, 118, 0.8));">SUPERVISED LEARNING &amp; ROC-AUC</text>
-            <g font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600">
-              <rect x="15" y="110" width="28" height="33" rx="5" fill="#00E676" class="bar-pulse-1" style="filter: drop-shadow(0 0 10px #00E676);"/>
-              <text x="18" y="152" fill="#00E676">BASE</text>
-              <rect x="62" y="85" width="28" height="58" rx="5" fill="#00B0FF" class="bar-pulse-2" style="filter: drop-shadow(0 0 12px #00B0FF);"/>
-              <text x="66" y="152" fill="#00B0FF">LOGR</text>
-              <rect x="109" y="60" width="28" height="83" rx="5" fill="#FFD600" class="bar-pulse-3" style="filter: drop-shadow(0 0 12px #FFD600);"/>
-              <text x="114" y="152" fill="#FFD600">RF</text>
-              <rect x="156" y="38" width="28" height="105" rx="5" fill="#00E5FF" class="bar-pulse-4" style="filter: drop-shadow(0 0 16px #00E5FF);"/>
-              <text x="159" y="152" fill="#00E5FF">XGB</text>
-              <rect x="203" y="70" width="28" height="73" rx="5" fill="#E040FB" class="bar-pulse-5" style="filter: drop-shadow(0 0 12px #E040FB);"/>
-              <text x="207" y="152" fill="#E040FB">TEST</text>
-              <rect x="250" y="45" width="28" height="98" rx="5" fill="#00E676" class="bar-pulse-6" style="filter: drop-shadow(0 0 14px #00E676);"/>
-              <text x="254" y="152" fill="#00E676">PROD</text>
+            <text x="8" y="18" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 230, 118, 0.8));">MODEL EVALUATION &amp; ROC-AUC</text>
+            <text x="8" y="30" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7.5">CONFUSION MATRIX · STRATIFIED BENCHMARK</text>
+
+            <!-- Left: 2x2 Confusion Matrix Heatmap -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7.5">
+              <text x="12" y="48" fill="#A1A1AA">CONFUSION MATRIX</text>
+              <!-- Cell TP -->
+              <rect x="12" y="54" width="48" height="32" rx="3" fill="#00E676" fill-opacity="0.25" stroke="#00E676" stroke-width="1.2"/>
+              <text x="18" y="68" fill="#00E676" font-weight="700">TP: 1,420</text>
+              <text x="18" y="78" fill="#A1A1AA" font-size="6.5">Sens: 89%</text>
+
+              <!-- Cell FP -->
+              <rect x="64" y="54" width="48" height="32" rx="3" fill="#FF3D00" fill-opacity="0.15" stroke="#FF3D00" stroke-width="1"/>
+              <text x="70" y="68" fill="#FF5722" font-weight="700">FP: 168</text>
+              <text x="70" y="78" fill="#A1A1AA" font-size="6.5">Alpha err</text>
+
+              <!-- Cell FN -->
+              <rect x="12" y="90" width="48" height="32" rx="3" fill="#FF5722" fill-opacity="0.15" stroke="#FF5722" stroke-width="1"/>
+              <text x="18" y="104" fill="#FF5722" font-weight="700">FN: 142</text>
+              <text x="18" y="114" fill="#A1A1AA" font-size="6.5">Beta err</text>
+
+              <!-- Cell TN -->
+              <rect x="64" y="90" width="48" height="32" rx="3" fill="#00B0FF" fill-opacity="0.25" stroke="#00B0FF" stroke-width="1.2"/>
+              <text x="70" y="104" fill="#00B0FF" font-weight="700">TN: 3,842</text>
+              <text x="70" y="114" fill="#A1A1AA" font-size="6.5">Spec: 96%</text>
             </g>
-            <path d="M25,108 C65,80 125,35 170,40 C210,45 235,68 264,42" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5 3" class="chart-flow-white" style="filter: drop-shadow(0 0 8px rgba(255,255,255,0.95));"/>
+
+            <!-- Right: ROC-AUC Coordinate Plot -->
+            <g>
+              <line x1="145" y1="125" x2="285" y2="125" stroke="#27272A" stroke-width="1"/>
+              <line x1="145" y1="45" x2="145" y2="125" stroke="#27272A" stroke-width="1"/>
+
+              <!-- Diagonal Random Baseline (AUC = 0.50) -->
+              <line x1="145" y1="125" x2="285" y2="45" stroke="#52525B" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+              <!-- Steep ROC-AUC Curve (AUC = 0.89) -->
+              <path d="M145,125 C148,65 175,50 285,45" fill="none" stroke="#00E676" stroke-width="2.5" class="chart-flow-cyan" style="filter: drop-shadow(0 0 8px #00E676);"/>
+              <circle cx="175" cy="58" r="4.5" fill="#00E676" class="neon-pulse"/>
+
+              <text x="178" y="80" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="700">AUC: 0.894</text>
+              <text x="210" y="95" fill="#A1A1AA" font-family="'IBM Plex Mono', monospace" font-size="7">Baseline: 0.500</text>
+
+              <text x="200" y="136" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="6.5">FPR (1 - Spec)</text>
+              <text x="125" y="48" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="6.5">TPR</text>
+            </g>
           </svg>
         </div>
         <div class="gh-body">
@@ -2884,16 +2985,51 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
         </div>
       </div>
 
-      <!-- 4. Ai-engineering-notes (NEW REPO 7) -->
+      <!-- 4. Ai-engineering-notes -->
       <div class="gh-card spotlight defer from-left">
         <div class="gh-viz">
           <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
-            <text x="8" y="18" fill="#FFD600" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(255, 214, 0, 0.8));">REGULARIZATION &amp; AGENT LOOPS</text>
-            <line x1="0" y1="130" x2="300" y2="130" stroke="#1F2430" stroke-width="1"/>
-            <polyline points="0,110 35,95 70,60 105,80 140,40 175,55 210,25 245,35 280,18 300,12" fill="none" stroke="#FFD600" stroke-width="2.4" class="chart-flow-slow" style="filter: drop-shadow(0 0 8px #FFD600);"/>
-            <circle cx="140" cy="40" r="5" fill="#00E5FF" class="neon-pulse"/>
-            <circle cx="210" cy="25" r="5" fill="#FFD600" class="neon-pulse-gold"/>
-            <circle cx="280" cy="18" r="5" fill="#00E676" class="neon-pulse"/>
+            <text x="8" y="18" fill="#FFD600" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(255, 214, 0, 0.8));">REGULARIZATION PATHS &amp; AGENT CYCLES</text>
+            <text x="8" y="30" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7.5">L1 LASSO SPARSITY vs L2 RIDGE SHRINKAGE</text>
+
+            <!-- Coordinate Axes -->
+            <line x1="20" y1="85" x2="190" y2="85" stroke="#27272A" stroke-width="1.2"/>
+            <line x1="20" y1="40" x2="20" y2="135" stroke="#27272A" stroke-width="1.2"/>
+
+            <!-- Zero line label -->
+            <text x="8" y="88" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7">0</text>
+            <text x="160" y="98" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7">λ (penalty)</text>
+
+            <!-- Trajectory 1: Beta 1 (Positive, hit zero at lambda = 120 -> L1 Sparsity) -->
+            <path d="M20,48 Q70,55 120,85 L180,85" fill="none" stroke="#FFD600" stroke-width="2.2" class="chart-flow-slow" style="filter: drop-shadow(0 0 6px #FFD600);"/>
+            <circle cx="120" cy="85" r="4" fill="#FFD600" class="neon-pulse-gold"/>
+            <text x="24" y="45" fill="#FFD600" font-family="'IBM Plex Mono', monospace" font-size="7">β₁ (hits 0)</text>
+
+            <!-- Trajectory 2: Beta 2 (Negative, asymptotically shrinking -> L2) -->
+            <path d="M20,125 Q80,115 180,88" fill="none" stroke="#00E5FF" stroke-width="2" class="chart-flow-cyan" style="filter: drop-shadow(0 0 6px #00E5FF);"/>
+            <circle cx="150" cy="91" r="3.5" fill="#00E5FF" class="neon-pulse"/>
+            <text x="24" y="132" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="7">β₂ (L2 Ridge)</text>
+
+            <!-- Trajectory 3: Beta 3 (Flattens early) -->
+            <path d="M20,65 Q50,75 80,85 L180,85" fill="none" stroke="#E040FB" stroke-width="1.8"/>
+            <circle cx="80" cy="85" r="3" fill="#E040FB" class="neon-pulse-rose"/>
+
+            <!-- Right: Agent Tool Loop Architecture Visual -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="6.5">
+              <circle cx="245" cy="85" r="32" fill="none" stroke="#00E676" stroke-width="1.4" stroke-dasharray="4 3" class="chart-flow-slow"/>
+              
+              <!-- 3 cycle nodes on circle -->
+              <circle cx="245" cy="53" r="5" fill="#00E676" class="neon-pulse"/>
+              <text x="235" y="46" fill="#00E676" font-weight="600">PLAN</text>
+
+              <circle cx="273" cy="101" r="5" fill="#00E5FF" class="neon-pulse"/>
+              <text x="278" y="104" fill="#00E5FF" font-weight="600">TOOL</text>
+
+              <circle cx="217" cy="101" r="5" fill="#FFD600" class="neon-pulse-gold"/>
+              <text x="195" y="104" fill="#FFD600" font-weight="600">EVAL</text>
+
+              <text x="230" y="88" fill="#FFFFFF" font-weight="700">LOOP</text>
+            </g>
           </svg>
         </div>
         <div class="gh-body">
@@ -2905,16 +3041,60 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
         </div>
       </div>
 
-      <!-- 5. sql-analytics-project (NEW REPO 8) -->
+      <!-- 5. sql-analytics-project -->
       <div class="gh-card spotlight defer from-down">
         <div class="gh-viz">
           <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
             <text x="8" y="18" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));">STAR SCHEMA &amp; WINDOW FUNCTIONS</text>
-            <line x1="0" y1="125" x2="300" y2="125" stroke="#1F2430" stroke-width="1"/>
-            <polyline points="0,115 40,105 80,75 120,85 160,50 200,60 240,30 280,35 300,20" fill="none" stroke="#00E5FF" stroke-width="2.4" class="chart-flow-cyan" style="filter: drop-shadow(0 0 8px #00E5FF);"/>
-            <circle cx="80" cy="75" r="5" fill="#00E5FF" class="neon-pulse"/>
-            <circle cx="160" cy="50" r="5" fill="#00E676" class="neon-pulse"/>
-            <circle cx="240" cy="30" r="5" fill="#FFD600" class="neon-pulse-gold"/>
+            <text x="8" y="30" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7.5">RELATIONAL CTEs · ROW_NUMBER() · DENSE_RANK()</text>
+
+            <!-- Table 1: dim_users (Left) -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="6.5">
+              <rect x="10" y="44" width="70" height="48" rx="3" fill="#0F1115" stroke="#00E5FF" stroke-width="1.2"/>
+              <rect x="10" y="44" width="70" height="13" fill="#00E5FF" fill-opacity="0.2"/>
+              <text x="14" y="53" fill="#00E5FF" font-weight="700">dim_users</text>
+              <text x="14" y="66" fill="#FFD600">PK user_id</text>
+              <text x="14" y="76" fill="#A1A1AA">cohort_date</text>
+              <text x="14" y="86" fill="#A1A1AA">region_id</text>
+            </g>
+
+            <!-- Center Table: fact_events -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="6.5">
+              <rect x="110" y="40" width="80" height="56" rx="3" fill="#0F1115" stroke="#00E676" stroke-width="1.4" style="filter: drop-shadow(0 0 8px rgba(0,230,118,0.3));"/>
+              <rect x="110" y="40" width="80" height="13" fill="#00E676" fill-opacity="0.2"/>
+              <text x="114" y="49" fill="#00E676" font-weight="700">fact_events</text>
+              <text x="114" y="62" fill="#FFD600">PK event_id</text>
+              <text x="114" y="72" fill="#00E5FF">FK user_id</text>
+              <text x="114" y="82" fill="#A1A1AA">amount_usd</text>
+              <text x="114" y="92" fill="#A1A1AA">timestamp</text>
+            </g>
+
+            <!-- Table 3: dim_products (Right) -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="6.5">
+              <rect x="220" y="44" width="70" height="48" rx="3" fill="#0F1115" stroke="#FF5722" stroke-width="1.2"/>
+              <rect x="220" y="44" width="70" height="13" fill="#FF5722" fill-opacity="0.2"/>
+              <text x="224" y="53" fill="#FF5722" font-weight="700">dim_products</text>
+              <text x="224" y="66" fill="#FFD600">PK prod_id</text>
+              <text x="224" y="76" fill="#A1A1AA">sku_tier</text>
+              <text x="224" y="86" fill="#A1A1AA">unit_price</text>
+            </g>
+
+            <!-- Relational Join Connectors (1:N) -->
+            <path d="M80,66 L110,66" stroke="#00E5FF" stroke-width="1.4" stroke-dasharray="2 2"/>
+            <circle cx="80" cy="66" r="2.5" fill="#00E5FF"/>
+            <circle cx="110" cy="66" r="2.5" fill="#00E5FF"/>
+
+            <path d="M190,66 L220,66" stroke="#FF5722" stroke-width="1.4" stroke-dasharray="2 2"/>
+            <circle cx="190" cy="66" r="2.5" fill="#FF5722"/>
+            <circle cx="220" cy="66" r="2.5" fill="#FF5722"/>
+
+            <!-- Bottom: Window Function Execution Frame -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7">
+              <rect x="10" y="110" width="280" height="34" rx="4" fill="#0F1115" stroke="#27272A" stroke-width="1"/>
+              <text x="18" y="124" fill="#FFD600" font-weight="600">WINDOW: PARTITION BY user_id ORDER BY timestamp</text>
+              <text x="18" y="136" fill="#00E676">LEAD(amount, 1) · ROW_NUMBER() OVER() · DENSE_RANK()</text>
+              <circle cx="275" cy="127" r="4" fill="#00E676" class="neon-pulse"/>
+            </g>
           </svg>
         </div>
         <div class="gh-body">
@@ -2926,16 +3106,56 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
         </div>
       </div>
 
-      <!-- 6. data-analysis-pipeline (NEW REPO 9) -->
+      <!-- 6. data-analysis-pipeline -->
       <div class="gh-card spotlight defer from-right">
         <div class="gh-viz">
           <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
-            <text x="8" y="18" fill="#E040FB" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(224, 64, 251, 0.8));">DATA PIPELINE &amp; EXPLORATION</text>
-            <line x1="0" y1="130" x2="300" y2="130" stroke="#1F2430" stroke-width="1"/>
-            <polyline points="0,105 35,90 70,100 105,70 140,78 175,45 210,55 245,28 280,38 300,20" fill="none" stroke="#E040FB" stroke-width="2.4" class="chart-flow-slow" style="filter: drop-shadow(0 0 8px #E040FB);"/>
-            <circle cx="105" cy="70" r="5" fill="#E040FB" class="neon-pulse-rose"/>
-            <circle cx="175" cy="45" r="5" fill="#00E5FF" class="neon-pulse"/>
-            <circle cx="245" cy="28" r="5.5" fill="#FFD600" class="neon-pulse-gold"/>
+            <text x="8" y="18" fill="#E040FB" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(224, 64, 251, 0.8));">END-TO-END ETL &amp; DISTRIBUTION EDA</text>
+            <text x="8" y="30" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="7.5">AUTOMATED INGESTION · OUTLIER TRIMMING · FEATURE PIPELINE</text>
+
+            <!-- Top: Gaussian Normal Distribution Curve (Statistical EDA) -->
+            <g>
+              <line x1="15" y1="95" x2="165" y2="95" stroke="#27272A" stroke-width="1"/>
+              <!-- Bell Curve -->
+              <path d="M15,95 Q65,95 80,68 Q90,44 95,44 Q100,44 110,68 Q125,95 165,95" fill="none" stroke="#E040FB" stroke-width="2.2" class="chart-flow-slow" style="filter: drop-shadow(0 0 8px #E040FB);"/>
+              <circle cx="95" cy="44" r="4" fill="#E040FB" class="neon-pulse-rose"/>
+
+              <!-- Standard Deviation Thresholds -->
+              <line x1="80" y1="44" x2="80" y2="95" stroke="#E040FB" stroke-width="1" stroke-dasharray="2 2"/>
+              <line x1="110" y1="44" x2="110" y2="95" stroke="#E040FB" stroke-width="1" stroke-dasharray="2 2"/>
+              <text x="74" y="104" fill="#A1A1AA" font-family="'IBM Plex Mono', monospace" font-size="6.5">-1σ</text>
+              <text x="92" y="104" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="6.5">μ</text>
+              <text x="106" y="104" fill="#A1A1AA" font-family="'IBM Plex Mono', monospace" font-size="6.5">+1σ</text>
+              <text x="12" y="70" fill="#71717A" font-family="'IBM Plex Mono', monospace" font-size="6.5">f(x)</text>
+            </g>
+
+            <!-- Right: 3-Stage ETL Data Stream -->
+            <g font-family="'IBM Plex Mono', monospace" font-size="7">
+              <!-- Stage 1: Raw Ingest -->
+              <rect x="180" y="44" width="108" height="20" rx="3" fill="#0F1115" stroke="#00E5FF" stroke-width="1.2"/>
+              <circle cx="190" cy="54" r="3" fill="#00E5FF" class="neon-pulse"/>
+              <text x="198" y="57" fill="#00E5FF" font-weight="600">01 RAW INGESTION</text>
+
+              <!-- Down arrow 1 -->
+              <line x1="234" y1="64" x2="234" y2="72" stroke="#A1A1AA" stroke-width="1.2" stroke-dasharray="2 1"/>
+
+              <!-- Stage 2: Clean & Impute -->
+              <rect x="180" y="72" width="108" height="20" rx="3" fill="#0F1115" stroke="#FFD600" stroke-width="1.2"/>
+              <circle cx="190" cy="82" r="3" fill="#FFD600" class="neon-pulse-gold"/>
+              <text x="198" y="85" fill="#FFD600" font-weight="600">02 IMPUTE &amp; SCALE</text>
+
+              <!-- Down arrow 2 -->
+              <line x1="234" y1="92" x2="234" y2="100" stroke="#A1A1AA" stroke-width="1.2" stroke-dasharray="2 1"/>
+
+              <!-- Stage 3: Feature Store -->
+              <rect x="180" y="100" width="108" height="20" rx="3" fill="#0F1115" stroke="#00E676" stroke-width="1.2"/>
+              <circle cx="190" cy="110" r="3" fill="#00E676" class="neon-pulse"/>
+              <text x="198" y="113" fill="#00E676" font-weight="600">03 FEATURE STORE</text>
+            </g>
+
+            <!-- Bottom summary -->
+            <text x="15" y="136" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="7.5" font-weight="600">✓ AUTOMATED DATA QUALITY GATES</text>
+            <text x="180" y="136" fill="#A1A1AA" font-family="'IBM Plex Mono', monospace" font-size="7">SCALED &amp; NORMALIZED</text>
           </svg>
         </div>
         <div class="gh-body">
