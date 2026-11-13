@@ -2358,8 +2358,7 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
 
 
 
-      <a href="#certifications" style="color:#00E5FF;font-weight:600">Certifications</a>
-        <a href="#education">Education</a>
+      <a href="#education">Education &amp; Certs</a>
 
 
 
@@ -2831,295 +2830,201 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
 
 
 
+<!-- GitHub Repositories Section -->
 <section id="github">
   <div class="wrap">
     <div class="shead defer from-down">
-      <p class="tag-line" style="color:#00E5FF;letter-spacing:0.12em;font-weight:600">Open-Source Codebases · 15 Public Repositories</p>
-      <h2>Production AI, ML &amp; Analytics Repositories</h2>
-      <p class="lede">Every flagship repository is fully open-source, architected with strict testing standards, typed data schemas, automated CI/CD pipelines, and verifiable evaluation suites.</p>
+      <p class="tag-line">GitHub Portfolio</p>
+      <h2>Public AI &amp; Analytics Repositories</h2>
+      <p class="lede">Tested, reproducible open-source pipelines — each with documented architectures, typed Python or SQL, and evaluation benchmarks.</p>
     </div>
+    <div class="gh-grid">
 
-    <!-- GitHub Repositories Grid (8 Flagship Repositories) -->
-    <div class="gh-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important; gap: 20px !important; background: transparent !important; border: none !important;">
-
-      <!-- REPO 1: rag-knowledge-assistant -->
-      <div class="gh-card spotlight defer from-left" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.35);color:#00E5FF;margin-bottom:0">Flagship RAG Toolkit</span>
-            <span class="mono" style="font-size:11px;color:#00E676;display:inline-flex;align-items:center;gap:4px">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> CI Passing
-            </span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">rag-knowledge-assistant</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">A production-grade, zero-heavy-dependency retrieval-augmented generation toolkit engineered in Python for grounded question answering with verifiable source citations.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#00E5FF;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>Hybrid Search:</b> Reciprocal Rank Fusion (RRF) combining dense cosine-similarity vector embeddings with sparse BM25 term weighting.</li>
-              <li><b>Zero Dependencies:</b> Built entirely in NumPy and standard library with clean plug-and-play interfaces for any embedding model or LLM.</li>
-              <li><b>Strict In-Line Grounding:</b> Dynamic context formatting that automatically injects reference citations, preventing hallucinations.</li>
-              <li><b>Evaluation Suite:</b> Integrated benchmark testing measuring Precision@K, Recall@K, and Mean Reciprocal Rank (MRR).</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>NumPy</span><span>BM25</span><span>Vector Search</span><span>RAG Evals</span><span>CI/CD</span>
-          </div>
+      <!-- 1. rag-knowledge-assistant -->
+      <div class="gh-card spotlight defer from-left">
+        <div class="gh-viz">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
+            <defs>
+              <linearGradient id="cyan-glow-rag" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.4"/>
+                <stop offset="60%" stop-color="#00E5FF" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="130" x2="300" y2="130" stroke="#1F2430" stroke-width="1"/>
+            <polygon points="0,95 35,90 70,65 105,75 140,45 175,55 210,30 245,40 280,18 300,15 300,130 0,130" fill="url(#cyan-glow-rag)"/>
+            <polyline points="0,110 35,105 70,112 105,95 140,98 175,85 210,88 245,70 280,60 300,55" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="4 3" class="chart-flow-slow" style="filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.8));"/>
+            <polyline points="0,95 35,90 70,65 105,75 140,45 175,55 210,30 245,40 280,18 300,15" fill="none" stroke="#00E5FF" stroke-width="2.6" class="chart-flow-cyan" style="filter: drop-shadow(0 0 8px #00E5FF) drop-shadow(0 0 16px rgba(0, 229, 255, 0.8));"/>
+            <circle cx="140" cy="45" r="5" fill="#00E5FF" class="neon-pulse" style="filter: drop-shadow(0 0 10px #00E5FF);"/>
+            <circle cx="210" cy="30" r="5.5" fill="#FBBF24" class="neon-pulse-gold" style="filter: drop-shadow(0 0 12px #FBBF24);"/>
+            <circle cx="280" cy="18" r="5" fill="#00E5FF" class="neon-pulse" style="filter: drop-shadow(0 0 10px #00E5FF);"/>
+            <text x="8" y="20" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));">VECTOR SEARCH &amp; BM25 FUSION</text>
+          </svg>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/rag-knowledge-assistant" target="_blank" rel="noopener noreferrer" style="background:#00E5FF;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(0,229,255,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View rag-knowledge-assistant on GitHub →</span>
-        </a>
+        <div class="gh-body">
+          <p class="tag-line">AI Engineering · Vector Search</p>
+          <h3>rag-knowledge-assistant</h3>
+          <p>Production retrieval-augmented generation toolkit: semantic chunking, BM25 keyword search, dense vector retrieval, hybrid rank fusion, citations, and evaluation harness.</p>
+          <div class="gh-tags"><span>Python</span><span>NumPy</span><span>BM25</span><span>Vector Search</span><span>RAG Evals</span><span>CI/CD</span></div>
+          <a class="gh-link" href="https://github.com/usmanali-hub/rag-knowledge-assistant" target="_blank" rel="noopener noreferrer">View Repository →</a>
+        </div>
       </div>
 
-      <!-- REPO 2: python-llm-utils -->
-      <div class="gh-card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(255,87,34,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(255,87,34,0.12);border:1px solid rgba(255,87,34,0.35);color:#FF5722;margin-bottom:0">Core LLM Package · v0.1.0</span>
-            <span class="mono" style="font-size:11px;color:#00E676;display:inline-flex;align-items:center;gap:4px">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> CI Passing
-            </span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">python-llm-utils</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Typed, production-tested utility package providing foundational scaffolding for LLM chat orchestration, prompt rendering, and token validation.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#FF5722;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>Schema Standard:</b> Typed <code>ChatRequest</code> and message validation abstractions decoupling backend services from provider-specific APIs.</li>
-              <li><b>Template Engine:</b> Fast, safe prompt interpolation preventing malformed context payloads before calling inference endpoints.</li>
-              <li><b>Token Auditing:</b> Fast token-length estimation function calculating exact message token bounds to avoid rate limits and cost spikes.</li>
-              <li><b>Strict Quality Gates:</b> Enforced typing via <code>mypy --strict</code>, formatted with <code>ruff</code>, and checked on multi-OS GitHub Actions CI.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>Pytest</span><span>Mypy Strict</span><span>Ruff</span><span>Token Counting</span><span>Prompt Eng</span>
-          </div>
+      <!-- 2. python-llm-utils -->
+      <div class="gh-card spotlight defer from-down">
+        <div class="gh-viz">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
+            <defs>
+              <linearGradient id="amber-glow-llm" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FF5722" stop-opacity="0.38"/>
+                <stop offset="70%" stop-color="#FF5722" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="28" x2="300" y2="28" stroke="#FF5722" stroke-width="2" stroke-dasharray="6 4" class="chart-flow-slow" style="filter: drop-shadow(0 0 6px #FF5722);"/>
+            <polygon points="0,35 25,40 50,58 75,52 100,75 125,68 150,92 175,82 200,105 225,95 250,118 275,108 300,125 300,160 0,160" fill="url(#amber-glow-llm)"/>
+            <polyline points="0,35 25,40 50,58 75,52 100,75 125,68 150,92 175,82 200,105 225,95 250,118 275,108 300,125" fill="none" stroke="#FF5722" stroke-width="2.5" class="chart-flow-slow" style="filter: drop-shadow(0 0 10px #FF5722);"/>
+            <circle cx="100" cy="75" r="5" fill="#FF5722" class="neon-pulse-rose" style="filter: drop-shadow(0 0 10px #FF5722);"/>
+            <circle cx="200" cy="105" r="5.5" fill="#F43F5E" class="neon-pulse-rose" style="filter: drop-shadow(0 0 12px #F43F5E);"/>
+            <circle cx="275" cy="108" r="5" fill="#FF7043" class="neon-pulse-gold" style="filter: drop-shadow(0 0 10px #FF7043);"/>
+            <text x="8" y="18" fill="#FF5722" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.8));">LLM UTILITIES &amp; TOKEN ORCHESTRATION</text>
+          </svg>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/python-llm-utils" target="_blank" rel="noopener noreferrer" style="background:#FF5722;color:#FFFFFF;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(255,87,34,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View python-llm-utils on GitHub →</span>
-        </a>
+        <div class="gh-body">
+          <p class="tag-line">LLM Infrastructure · Core Package</p>
+          <h3>python-llm-utils</h3>
+          <p>Typed, tested Python utilities for LLM applications: ChatRequest schema normalization, dynamic prompt rendering, token estimation, and strict mypy verification.</p>
+          <div class="gh-tags"><span>Python</span><span>Pytest</span><span>Mypy Strict</span><span>Prompt Eng</span><span>CI/CD</span></div>
+          <a class="gh-link" href="https://github.com/usmanali-hub/python-llm-utils" target="_blank" rel="noopener noreferrer">View Repository →</a>
+        </div>
       </div>
 
-      <!-- REPO 3: ml-end-to-end -->
-      <div class="gh-card spotlight defer from-right" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,230,118,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(0,230,118,0.12);border:1px solid rgba(0,230,118,0.35);color:#00E676;margin-bottom:0">Machine Learning Pipeline</span>
-            <span class="mono" style="font-size:11px;color:#00E676;display:inline-flex;align-items:center;gap:4px">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> CI Passing
-            </span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">ml-end-to-end</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Supervised machine learning pipeline for customer churn classification built from first principles for absolute reproducibility, honest baselines, and structured benchmarking.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#00E676;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>Validated Ingestion:</b> Automated loading and schema verification of IBM's 7,043-customer Telco dataset (26.5% positive churn class).</li>
-              <li><b>Stratified Partitions:</b> Hardened train/val/test splits preventing temporal and distribution leakage.</li>
-              <li><b>Honest Baselines:</b> Measures model superiority against deterministic dummy and Logistic Regression baselines before validating complex ensembles.</li>
-              <li><b>Model Metrics:</b> Evaluated across ROC-AUC, Precision-Recall curves, Brier score calibration, and feature attribution.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>ROC-AUC</span><span>Jupyter</span><span>CI/CD</span>
-          </div>
+      <!-- 3. ml-end-to-end -->
+      <div class="gh-card spotlight defer from-right">
+        <div class="gh-viz">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
+            <text x="8" y="18" fill="#00E676" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 230, 118, 0.8));">SUPERVISED LEARNING &amp; ROC-AUC</text>
+            <g font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600">
+              <rect x="15" y="110" width="28" height="33" rx="5" fill="#00E676" class="bar-pulse-1" style="filter: drop-shadow(0 0 10px #00E676);"/>
+              <text x="18" y="152" fill="#00E676">BASE</text>
+              <rect x="62" y="85" width="28" height="58" rx="5" fill="#00B0FF" class="bar-pulse-2" style="filter: drop-shadow(0 0 12px #00B0FF);"/>
+              <text x="66" y="152" fill="#00B0FF">LOGR</text>
+              <rect x="109" y="60" width="28" height="83" rx="5" fill="#FFD600" class="bar-pulse-3" style="filter: drop-shadow(0 0 12px #FFD600);"/>
+              <text x="114" y="152" fill="#FFD600">RF</text>
+              <rect x="156" y="38" width="28" height="105" rx="5" fill="#00E5FF" class="bar-pulse-4" style="filter: drop-shadow(0 0 16px #00E5FF);"/>
+              <text x="159" y="152" fill="#00E5FF">XGB</text>
+              <rect x="203" y="70" width="28" height="73" rx="5" fill="#E040FB" class="bar-pulse-5" style="filter: drop-shadow(0 0 12px #E040FB);"/>
+              <text x="207" y="152" fill="#E040FB">TEST</text>
+              <rect x="250" y="45" width="28" height="98" rx="5" fill="#00E676" class="bar-pulse-6" style="filter: drop-shadow(0 0 14px #00E676);"/>
+              <text x="254" y="152" fill="#00E676">PROD</text>
+            </g>
+            <path d="M25,108 C65,80 125,35 170,40 C210,45 235,68 264,42" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5 3" class="chart-flow-white" style="filter: drop-shadow(0 0 8px rgba(255,255,255,0.95));"/>
+          </svg>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/ml-end-to-end" target="_blank" rel="noopener noreferrer" style="background:#00E676;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(0,230,118,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View ml-end-to-end on GitHub →</span>
-        </a>
+        <div class="gh-body">
+          <p class="tag-line">Machine Learning · Predictive Systems</p>
+          <h3>ml-end-to-end</h3>
+          <p>Supervised learning pipeline on customer churn built for 100% reproducibility: validated data loaders, fixed stratified splits, honest baseline benchmarks, and model evaluation.</p>
+          <div class="gh-tags"><span>Python</span><span>Scikit-Learn</span><span>Jupyter</span><span>Evals</span><span>CI/CD</span></div>
+          <a class="gh-link" href="https://github.com/usmanali-hub/ml-end-to-end" target="_blank" rel="noopener noreferrer">View Repository →</a>
+        </div>
       </div>
 
-      <!-- REPO 4: Ai-engineering-notes -->
-      <div class="gh-card spotlight defer from-left" style="background:rgba(18,20,24,0.7);border:1px solid rgba(255,214,0,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(255,214,0,0.12);border:1px solid rgba(255,214,0,0.35);color:#FFD600;margin-bottom:0">Architectural Lab &amp; Patterns</span>
-            <span class="mono" style="font-size:11px;color:#00E676;display:inline-flex;align-items:center;gap:4px">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> CI Passing
-            </span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">Ai-engineering-notes</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Curated repository of tested machine learning algorithms, mathematical proofs, agent loop designs, and SQL analytics implementations.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#FFD600;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>Regularization Paths:</b> Concrete mathematical derivations and scripts tracing coefficient shrinkages across Ridge and Lasso paths.</li>
-              <li><b>Agentic Tool Loops:</b> Structured execution frameworks for multi-step tool calling, memory stores, and reflection cycles.</li>
-              <li><b>Advanced SQL Suite:</b> Window partitioning, moving aggregates, and complex relational CTE queries.</li>
-              <li><b>Test Automation:</b> Standardized with <code>pytest.ini</code> enforcing zero untested algorithmic scripts.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>Machine Learning</span><span>SQL</span><span>Pytest</span><span>Agent Loops</span><span>Optimization</span>
-          </div>
+      <!-- 4. Macro-Market-Intelligence -->
+      <div class="gh-card spotlight defer from-left">
+        <div class="gh-viz">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
+            <defs>
+              <linearGradient id="cyan-glow-area" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.35"/>
+                <stop offset="60%" stop-color="#00E5FF" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="130" x2="300" y2="130" stroke="#1F2430" stroke-width="1"/>
+            <polygon points="0,90 30,95 60,70 90,80 120,55 150,60 180,35 210,45 240,20 270,30 300,15 300,130 0,130" fill="url(#cyan-glow-area)"/>
+            <polyline points="0,110 30,108 60,112 90,100 120,102 150,90 180,92 210,80 240,78 270,65 300,60" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="4 3" class="chart-flow-slow" style="filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.8));"/>
+            <polyline points="0,90 30,95 60,70 90,80 120,55 150,60 180,35 210,45 240,20 270,30 300,15" fill="none" stroke="#00E5FF" stroke-width="2.6" class="chart-flow-cyan" style="filter: drop-shadow(0 0 8px #00E5FF) drop-shadow(0 0 16px rgba(0, 229, 255, 0.8));"/>
+            <circle cx="180" cy="35" r="5" fill="#00E5FF" class="neon-pulse" style="filter: drop-shadow(0 0 10px #00E5FF);"/>
+            <circle cx="240" cy="20" r="5.5" fill="#FBBF24" class="neon-pulse-gold" style="filter: drop-shadow(0 0 12px #FBBF24);"/>
+            <circle cx="300" cy="15" r="5" fill="#00E5FF" class="neon-pulse" style="filter: drop-shadow(0 0 10px #00E5FF);"/>
+            <text x="8" y="20" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));">YIELD CURVE &amp; MACRO REGIME</text>
+          </svg>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/Ai-engineering-notes" target="_blank" rel="noopener noreferrer" style="background:#FFD600;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(255,214,0,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View Ai-engineering-notes on GitHub →</span>
-        </a>
+        <div class="gh-body">
+          <p class="tag-line">Economic &amp; Financial Analytics</p>
+          <h3>Macro Market Intelligence</h3>
+          <p>U.S. macroeconomic data analysis using Python, SQL and public FRED data — rates, inflation, GDP, unemployment, yield curve, and heuristic macro regimes.</p>
+          <div class="gh-tags"><span>Python</span><span>SQL</span><span>FRED API</span></div>
+          <a class="gh-link" href="https://github.com/usmanali-hub/Macro-Market-Intelligence" target="_blank" rel="noopener noreferrer">View Repository →</a>
+        </div>
       </div>
 
-      <!-- REPO 5: sql-analytics-project -->
-      <div class="gh-card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.35);color:#00E5FF;margin-bottom:0">Data Engineering &amp; SQL</span>
-            <span class="mono" style="font-size:11px;color:#00E676;display:inline-flex;align-items:center;gap:4px">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Tested
-            </span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">sql-analytics-project</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Production-style relational SQL analytics repository showcasing star-schema modeling, recursive CTEs, and rigorous automated data validation queries.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#00E5FF;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>Star Schema Modeling:</b> Clean dimension and fact tables engineered for fast analytical query execution.</li>
-              <li><b>Window Partitioning:</b> Advanced analytical queries utilizing <code>ROW_NUMBER()</code>, <code>DENSE_RANK()</code>, <code>LEAD()</code>, and rolling time windows.</li>
-              <li><b>Business Metric Logic:</b> Comprehensive queries computing customer retention cohorts, revenue churn, and operational velocity.</li>
-              <li><b>Automated Integrity Checks:</b> SQL assertions guaranteeing primary key uniqueness, foreign key validity, and non-negative metric bounds.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>SQL</span><span>PostgreSQL</span><span>Schema Modeling</span><span>Window Functions</span><span>CTEs</span><span>Data Integrity</span>
-          </div>
+      <!-- 5. Trading-Risk-Performance -->
+      <div class="gh-card spotlight defer from-down">
+        <div class="gh-viz">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
+            <defs>
+              <linearGradient id="fire-glow-area" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FF3D00" stop-opacity="0.38"/>
+                <stop offset="70%" stop-color="#FF3D00" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="26" x2="300" y2="26" stroke="#FF4500" stroke-width="2" stroke-dasharray="6 4" class="chart-flow-slow" style="filter: drop-shadow(0 0 6px #FF4500);"/>
+            <polygon points="0,28 20,34 40,54 60,49 80,74 100,69 120,99 140,89 160,114 180,104 200,124 220,109 240,134 260,122 280,144 300,132 300,160 0,160" fill="url(#fire-glow-area)"/>
+            <polyline points="0,28 20,34 40,54 60,49 80,74 100,69 120,99 140,89 160,114 180,104 200,124 220,109 240,134 260,122 280,144 300,132" fill="none" stroke="#FF3D00" stroke-width="2.5" class="chart-flow-slow" style="filter: drop-shadow(0 0 10px #FF3D00);"/>
+            <circle cx="120" cy="99" r="5" fill="#FF3D00" class="neon-pulse-rose" style="filter: drop-shadow(0 0 10px #FF3D00);"/>
+            <circle cx="200" cy="124" r="5.5" fill="#F43F5E" class="neon-pulse-rose" style="filter: drop-shadow(0 0 12px #F43F5E);"/>
+            <circle cx="280" cy="144" r="5.5" fill="#F43F5E" class="neon-pulse-rose" style="filter: drop-shadow(0 0 14px #F43F5E);"/>
+            <text x="8" y="16" fill="#FF5722" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.8));">DRAWDOWN CURVE (EQUITY %)</text>
+          </svg>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/sql-analytics-project" target="_blank" rel="noopener noreferrer" style="background:#00E5FF;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(0,229,255,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View sql-analytics-project on GitHub →</span>
-        </a>
+        <div class="gh-body">
+          <p class="tag-line">Financial Risk Analytics</p>
+          <h3>Trading Risk &amp; Performance</h3>
+          <p>Trade-level analytics focused on performance quality: expectancy, win rate, profit factor, drawdown, tail loss, recovery factor, strategy &amp; regime segmentation.</p>
+          <div class="gh-tags"><span>Python</span><span>SQL</span><span>Risk Modelling</span></div>
+          <a class="gh-link" href="https://github.com/usmanali-hub/Trading-Risk-Performance" target="_blank" rel="noopener noreferrer">View Repository →</a>
+        </div>
       </div>
 
-      <!-- REPO 6: Macro-Market-Intelligence -->
-      <div class="gh-card spotlight defer from-right" style="background:rgba(18,20,24,0.7);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.35);color:#F59E0B;margin-bottom:0">Macro &amp; FRED Pipelines</span>
-            <span class="mono" style="font-size:11px;color:#F59E0B;display:inline-flex;align-items:center;gap:4px">★ 1 Star</span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">Macro-Market-Intelligence</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Automated U.S. macroeconomic intelligence pipeline tracking interest rate cycles, inflation pressures, GDP output, and yield curve regime shifts.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#F59E0B;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>FRED API Ingestion:</b> Programmatic ingestion of Federal Reserve economic series with automated backfill and validation.</li>
-              <li><b>Yield Curve Modeling:</b> Real-time computation of 10Y-2Y and 10Y-3M spreads to isolate economic regime turning points.</li>
-              <li><b>Heuristic Regime Classification:</b> Quantitative rules categorizing macro climates into Reflation, Expansion, Stagflation, and Contraction.</li>
-              <li><b>SQL Analytic Views:</b> Precomputed rolling metrics, z-scores, and historical percentiles for cross-asset correlation.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>SQL</span><span>FRED API</span><span>Yield Curve</span><span>Econometrics</span><span>Time Series</span>
-          </div>
+      <!-- 6. Customer-Support-Analytics -->
+      <div class="gh-card spotlight defer from-right">
+        <div class="gh-viz">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="background:#000000; display:block; width:100%; height:auto;">
+            <text x="8" y="18" fill="#00E5FF" font-family="'IBM Plex Mono', monospace" font-size="9.5" font-weight="600" letter-spacing="0.08em" style="filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));">SLA / CSAT BY TICKET PRIORITY</text>
+            <g font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600">
+              <rect x="12" y="115" width="28" height="28" rx="5" ry="5" fill="#00E676" class="bar-pulse-1" style="filter: drop-shadow(0 0 12px #00E676);"/>
+              <text x="14" y="152" fill="#00E676">LOW</text>
+              <rect x="58" y="90" width="28" height="53" rx="5" ry="5" fill="#00B0FF" class="bar-pulse-2" style="filter: drop-shadow(0 0 14px #00B0FF);"/>
+              <text x="60" y="152" fill="#00B0FF">MED</text>
+              <rect x="104" y="65" width="28" height="78" rx="5" ry="5" fill="#FFD600" class="bar-pulse-3" style="filter: drop-shadow(0 0 14px #FFD600);"/>
+              <text x="110" y="152" fill="#FFD600">HI</text>
+              <rect x="150" y="32" width="28" height="111" rx="5" ry="5" fill="#FF3D00" class="bar-pulse-4" style="filter: drop-shadow(0 0 18px #FF3D00);"/>
+              <text x="153" y="152" fill="#FF3D00">URG</text>
+              <rect x="196" y="98" width="28" height="45" rx="5" ry="5" fill="#00E676" class="bar-pulse-5" style="filter: drop-shadow(0 0 12px #00E676);"/>
+              <text x="200" y="152" fill="#00E676">CH1</text>
+              <rect x="242" y="55" width="28" height="88" rx="5" ry="5" fill="#E040FB" class="bar-pulse-6" style="filter: drop-shadow(0 0 18px #E040FB);"/>
+              <text x="246" y="152" fill="#E040FB">CH2</text>
+            </g>
+            <path d="M22,112 C60,98 120,40 164,48 C200,56 220,118 256,58" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-dasharray="5 3" class="chart-flow-white" style="filter: drop-shadow(0 0 8px rgba(255,255,255,0.95));"/>
+          </svg>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/Macro-Market-Intelligence" target="_blank" rel="noopener noreferrer" style="background:#F59E0B;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(245,158,11,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View Macro-Market-Intelligence on GitHub →</span>
-        </a>
-      </div>
-
-      <!-- REPO 7: Customer-Support-Analytics -->
-      <div class="gh-card spotlight defer from-left" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.35);color:#00E5FF;margin-bottom:0">Operations &amp; KPI Analytics</span>
-            <span class="mono" style="font-size:11px;color:#00E5FF;display:inline-flex;align-items:center;gap:4px">★ 1 Star</span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">Customer-Support-Analytics</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Operations analytics measuring service velocity, SLA attainment by queue priority, resolution bottlenecks, and CSAT sentiment distributions.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#00E5FF;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>SLA Metric Calculations:</b> Automated measurement of First-Response Time (FRT), Mean Time to Resolution (MTTR), and breach distributions.</li>
-              <li><b>Queue Priority Modeling:</b> Statistical breakdown across Low, Medium, High, and Urgent tiers to diagnose escalation triggers.</li>
-              <li><b>CSAT Drivers:</b> Correlation analysis identifying the exact operational variables that produce 5-star versus 1-star ratings.</li>
-              <li><b>Synthetic Calibration:</b> Scalable synthetic ticket generation mimicking realistic support volume spikes.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>SQL</span><span>KPI Analytics</span><span>SLA Modeling</span><span>CSAT Optimization</span>
-          </div>
+        <div class="gh-body">
+          <p class="tag-line">Business Operations Analytics</p>
+          <h3>Customer Support Analytics</h3>
+          <p>Operations analytics measuring demand and service quality: ticket volume, SLA attainment, first-response &amp; resolution time, CSAT, escalations and reopen rates.</p>
+          <div class="gh-tags"><span>Python</span><span>SQL</span><span>KPI Analysis</span></div>
+          <a class="gh-link" href="https://github.com/usmanali-hub/Customer-Support-Analytics" target="_blank" rel="noopener noreferrer">View Repository →</a>
         </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/Customer-Support-Analytics" target="_blank" rel="noopener noreferrer" style="background:#00E5FF;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(0,229,255,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View Customer-Support-Analytics on GitHub →</span>
-        </a>
-      </div>
-
-      <!-- REPO 8: Trading-Risk-Performance -->
-      <div class="gh-card spotlight defer from-right" style="background:rgba(18,20,24,0.7);border:1px solid rgba(224,64,251,0.3);border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <span class="card-tag" style="background:rgba(224,64,251,0.12);border:1px solid rgba(224,64,251,0.35);color:#E040FB;margin-bottom:0">Quantitative Risk Engine</span>
-            <span class="mono" style="font-size:11px;color:#E040FB;display:inline-flex;align-items:center;gap:4px">★ 1 Star</span>
-          </div>
-
-          <h3 style="font-size:20px;font-weight:700;margin-top:6px;color:#FFFFFF;letter-spacing:-0.01em">Trading-Risk-Performance</h3>
-          <p style="font-size:13.5px;color:var(--dim);line-height:1.6;margin-top:8px">Algorithmic risk evaluation engine quantifying trade execution quality, maximum drawdown profiles, tail loss events, and statistical expectancy.</p>
-
-          <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px">
-            <p class="tag-line" style="font-size:10.5px;color:#E040FB;margin-bottom:8px">Technical Architecture &amp; Key Features:</p>
-            <ul style="padding-left:18px;font-size:12.5px;color:var(--body);line-height:1.7;margin:0">
-              <li><b>Expectancy Modeling:</b> Closed-form statistical equations measuring edge, profit factors, win rate stability, and payoff skew.</li>
-              <li><b>Drawdown &amp; Tail Risk:</b> Underwater equity curves, Maximum Adverse Excursion (MAE), and recovery factor calculations.</li>
-              <li><b>Cohort &amp; Strategy Segmentation:</b> Granular attribution separating systematic vs discretionary execution returns.</li>
-              <li><b>Reproducible Analysis:</b> Clean SQL scripts and Python notebooks outputting verifiable statistical reports.</li>
-            </ul>
-          </div>
-
-          <div class="gh-tags" style="margin-top:16px">
-            <span>Python</span><span>SQL</span><span>Risk Modeling</span><span>Drawdown Analysis</span><span>Expectancy</span><span>Statistics</span>
-          </div>
-        </div>
-
-        <a class="btn" href="https://github.com/usmanali-hub/Trading-Risk-Performance" target="_blank" rel="noopener noreferrer" style="background:#E040FB;color:#0B0C0E;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;box-shadow:0 0 18px rgba(224,64,251,0.35);text-decoration:none;border-radius:6px;padding:12px 18px">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>View Trading-Risk-Performance on GitHub →</span>
-        </a>
       </div>
 
     </div>
 
-    <!-- GitHub Profile Banner -->
-    <div class="gh-profile defer from-down" style="margin-top:36px;background:rgba(18,20,24,0.8);border:1px solid rgba(0,229,255,0.3);border-radius:10px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px">
-      <div>
-        <h3 style="font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:4px">Looking for more repositories and commits?</h3>
-        <p style="font-size:13.5px;color:var(--dim);margin:0">Explore all 15 public repositories, test suites, and ongoing contributions on my full GitHub profile.</p>
-      </div>
-      <a class="btn" style="margin-top:0;background:#00E5FF;color:#0B0C0E;font-weight:700;box-shadow:0 0 20px rgba(0,229,255,0.35);display:inline-flex;align-items:center;gap:8px" href="https://github.com/usmanali-hub" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        <span>Visit GitHub Profile (usmanali-hub)</span>
-      </a>
+    <div class="gh-profile defer from-down">
+      <p>Full profile, 15 pinned and active repositories — <b>usmanali-hub</b> on GitHub.</p>
+      <a class="btn" style="margin-top:0" href="https://github.com/usmanali-hub" target="_blank" rel="noopener noreferrer">Visit GitHub Profile</a>
     </div>
   </div>
 </section>
@@ -6713,282 +6618,135 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
 
 
 
-<!-- Licenses & Certifications Section -->
-<section id="certifications">
-  <div class="wrap">
-    <div class="shead defer from-down">
-      <p class="tag-line" style="color:#00E5FF;letter-spacing:0.12em;font-weight:600">Verified Credentials</p>
-      <h2>Licenses &amp; Professional Certifications</h2>
-      <p class="lede">Industry-accredited certifications across Artificial Intelligence, Large Language Models, Prompt Engineering, Machine Learning, Cloud Architecture, and Quantitative Risk.</p>
-    </div>
-
-    <!-- Category 1: Google AI & Analytics Suite -->
-    <div style="margin-bottom:34px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
-        <span class="pulse-dot" style="background:#00E5FF;box-shadow:0 0 10px #00E5FF"></span>
-        <h3 style="font-size:18px;font-weight:700;color:#FFFFFF;margin:0">Google — AI, Machine Learning &amp; Advanced Analytics</h3>
-      </div>
-
-      <div class="g4" style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important; gap: 16px !important; background: transparent !important; border: none !important;">
-
-        <!-- Cert 1 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Maximize Productivity With AI Tools</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">FL3PTWE6IKSV</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/FL3PTWE6IKSV" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 2 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Use AI Responsibly</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">LUED8TRGU65K</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/LUED8TRGU65K" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 3 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Discover the Art of Prompting</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">YB471Q67744M</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/YB471Q67744M" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 4 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">The Nuts and Bolts of Machine Learning</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">DC0SH9ZL9DEG</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/DC0SH9ZL9DEG" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 5 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Stay Ahead of the AI Curve</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">NFITPRDC6E0H</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/NFITPRDC6E0H" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 6 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Introduction to AI</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">8KF6DZ4K8TV9</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/8KF6DZ4K8TV9" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 7 -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Google Capstone</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Google Advanced Data Analytics Capstone</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">3WIUHHRHSZL5</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/3WIUHHRHSZL5" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Category 2: AWS, Coursera & Quantitative Risk -->
-    <div>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
-        <span class="pulse-dot" style="background:#FF9900;box-shadow:0 0 10px #FF9900"></span>
-        <h3 style="font-size:18px;font-weight:700;color:#FFFFFF;margin:0">AWS, Coursera &amp; Quantitative Risk Evaluations</h3>
-      </div>
-
-      <div class="g4" style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important; gap: 16px !important; background: transparent !important; border: none !important;">
-
-        <!-- Cert 8: AWS Agentic AI -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(255,153,0,0.3);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(255,153,0,0.12);border:1px solid rgba(255,153,0,0.35);color:#FF9900;margin-bottom:0">Amazon Web Services</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">May 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Introduction to Agentic AI on AWS</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Skills: Multi-Agent Architectures, Bedrock, Tool Use, Planning Loops, Autonomous Systems.</p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/usman-ali-ai-engineer/overlay/Certifications/1508860802/treasury/?profileId=ACoAAGDbKSIBRPt8lFdoLA1zEMCtoDg-xx6R6BI" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(255,153,0,0.35);color:#FF9900;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 9: Prompting like a Pro -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Coursera</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Start Writing Prompts like a Pro</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">9W9GDR5M93VX</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/9W9GDR5M93VX" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 10: Project Management -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,229,255,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,229,255,0.12);border:1px solid rgba(0,229,255,0.3);color:#00E5FF;margin-bottom:0">Coursera</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Nov 2026</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Foundations of Project Management</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Credential ID: <span class="mono" style="color:#A1A1AA">ZZBQCCGNVT5W</span></p>
-          </div>
-          <a class="btn btn--ghost" href="https://www.coursera.org/account/accomplishments/records/ZZBQCCGNVT5W" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,229,255,0.35);color:#00E5FF;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 11: Instant Funding -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,230,118,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,230,118,0.12);border:1px solid rgba(0,230,118,0.3);color:#00E676;margin-bottom:0">Instant Funding</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Jul 2025</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Certificate of Completion — Evaluation</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Skills: Market Structure, Risk Management, Quantitative Position Sizing.</p>
-          </div>
-          <a class="btn btn--ghost" href="https://instantfunding.com" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,230,118,0.35);color:#00E676;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-        <!-- Cert 12: Maven Trading -->
-        <div class="card spotlight defer from-up" style="background:rgba(18,20,24,0.7);border:1px solid rgba(0,230,118,0.25);border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <span class="card-tag" style="background:rgba(0,230,118,0.12);border:1px solid rgba(0,230,118,0.3);color:#00E676;margin-bottom:0">Maven Trading</span>
-              <span class="mono" style="font-size:11px;color:var(--dim)">Apr 2025</span>
-            </div>
-            <h4 style="font-size:15px;font-weight:700;color:#FFFFFF;margin-bottom:6px;line-height:1.4">Certificate of Completion — Evaluation</h4>
-            <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Skills: Market Structure, Risk Management, Drawdown Preservation.</p>
-          </div>
-          <a class="btn btn--ghost" href="https://maventrading.com" target="_blank" rel="noopener noreferrer" style="font-size:11.5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;width:fit-content;border-color:rgba(0,230,118,0.35);color:#00E676;border-radius:4px;text-decoration:none">
-            <span>Show Credential</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<!-- Education & Certifications Section -->
 <section id="education">
-
-
-
   <div class="wrap">
-
-
-
     <div class="shead defer from-down">
-
-
-
       <p class="tag-line">Education &amp; Certifications</p>
-
-
-
-      <h2>Academic Background</h2>
-
-
-
+      <h2>Academic Degrees &amp; Professional Licenses</h2>
+      <p class="lede">Formal education in Artificial Intelligence paired with certified industry credentials across Google, AWS, and quantitative systems.</p>
     </div>
 
-
-
+    <!-- Academic Degrees (3-column grid) -->
     <div class="g3">
-
-
-
-      <div class="card spotlight defer from-left"><p class="tag-line">HITEC University</p><h4>BS, Artificial Intelligence</h4><p style="margin-top:6px;font-size:13.5px;color:var(--dim)">Sep 2023 — Jul 2027 · In progress</p></div>
-
-
-
-      <div class="card spotlight defer from-down"><p class="tag-line">Government College University, Lahore</p><h4>FSc, Pre-Engineering</h4><p style="margin-top:6px;font-size:13.5px;color:var(--dim)">Oct 2021 — Aug 2023</p></div>
-
-
-
-      <div class="card spotlight defer from-right"><p class="tag-line">Watan Ideal High School</p><h4>SSC, Matriculation</h4><p style="margin-top:6px;font-size:13.5px;color:var(--dim)">May 2021</p></div>
-
-
-
+      <div class="card spotlight defer from-left">
+        <p class="tag-line">HITEC University</p>
+        <h4>BS, Artificial Intelligence</h4>
+        <p style="margin-top:6px;font-size:13.5px;color:var(--dim)">Sep 2023 — Jul 2027 · In progress</p>
+      </div>
+      <div class="card spotlight defer from-down">
+        <p class="tag-line">Government College University, Lahore</p>
+        <h4>FSc, Pre-Engineering</h4>
+        <p style="margin-top:6px;font-size:13.5px;color:var(--dim)">Oct 2021 — Aug 2023</p>
+      </div>
+      <div class="card spotlight defer from-right">
+        <p class="tag-line">Watan Ideal High School</p>
+        <h4>SSC, Matriculation</h4>
+        <p style="margin-top:6px;font-size:13.5px;color:var(--dim)">May 2021</p>
+      </div>
     </div>
 
+    <!-- All 12 Certifications merged all together in ONE unified 4-column grid (NO DATES) -->
+    <div class="g4" style="margin-top:1px">
 
+      <!-- Cert 1 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>Maximize Productivity With AI Tools</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">FL3PTWE6IKSV</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/FL3PTWE6IKSV" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
 
+      <!-- Cert 2 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>Use AI Responsibly</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">LUED8TRGU65K</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/LUED8TRGU65K" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 3 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>Discover the Art of Prompting</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">YB471Q67744M</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/YB471Q67744M" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 4 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>The Nuts and Bolts of Machine Learning</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">DC0SH9ZL9DEG</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/DC0SH9ZL9DEG" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 5 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>Stay Ahead of the AI Curve</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">NFITPRDC6E0H</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/NFITPRDC6E0H" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 6 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>Introduction to AI</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">8KF6DZ4K8TV9</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/8KF6DZ4K8TV9" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 7 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Google</p>
+        <h4>Google Advanced Data Analytics Capstone</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">3WIUHHRHSZL5</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/3WIUHHRHSZL5" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 8 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">AWS</p>
+        <h4>Introduction to Agentic AI on AWS</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Multi-agent architectures, Bedrock &amp; planning loops</p>
+        <a class="gh-link" href="https://www.linkedin.com/in/usman-ali-ai-engineer/overlay/Certifications/1508860802/treasury/?profileId=ACoAAGDbKSIBRPt8lFdoLA1zEMCtoDg-xx6R6BI" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 9 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Coursera</p>
+        <h4>Start Writing Prompts like a Pro</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">9W9GDR5M93VX</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/9W9GDR5M93VX" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 10 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Coursera</p>
+        <h4>Foundations of Project Management</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Credential ID: <span class="mono">ZZBQCCGNVT5W</span></p>
+        <a class="gh-link" href="https://www.coursera.org/account/accomplishments/records/ZZBQCCGNVT5W" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 11 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Instant Funding</p>
+        <h4>Certificate of Completion — Evaluation</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Market structure &amp; risk management evaluation</p>
+        <a class="gh-link" href="https://instantfunding.com" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+      <!-- Cert 12 -->
+      <div class="card spotlight defer from-up">
+        <p class="tag-line">Maven Trading</p>
+        <h4>Certificate of Completion — Evaluation</h4>
+        <p style="margin-top:6px;font-size:12px;color:var(--dim)">Market structure &amp; risk management evaluation</p>
+        <a class="gh-link" href="https://maventrading.com" target="_blank" rel="noopener noreferrer">Show Credential →</a>
+      </div>
+
+    </div>
   </div>
-
-
-
 </section>
 
 
@@ -7214,7 +6972,6 @@ html, body { min-width: 1280px !important; width: 1280px !important; margin: 0 a
 
 
       <a href="#experience">Experience</a>
-      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
 
 
