@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marble Cognition | AI Coworker & Process Graph Simulator — Prototype by Usman Ali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090E;
+      --card: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(30, 41, 59, 0.85);
+      --primary: #00E5FF;
+      --primary-glow: rgba(0, 229, 255, 0.25);
+      --purple: #8B5CF6;
+      --purple-glow: rgba(139, 92, 246, 0.25);
+      --green: #10B981;
+      --amber: #F59E0B;
+      --red: #EF4444;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 229, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      background: rgba(7, 9, 14, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: #000;
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: rgba(0, 229, 255, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .author-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px 14px;
+      border-radius: 30px;
+      border: 1px solid var(--card-border);
+      font-size: 13px;
+    }
+
+    .author-pill img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-pill a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .author-pill a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.2) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      max-width: 800px;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+
+    /* Workflow Selector Tabs */
+    .workflow-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .wf-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .wf-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .wf-btn.active {
+      background: rgba(0, 229, 255, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+
+    /* Main Grid Layout */
+    .simulation-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 1080px) {
+      .simulation-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Process Graph Panel */
+    .graph-panel {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .panel-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .panel-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-run {
+      background: linear-gradient(135deg, #00E5FF, #3B82F6);
+      color: #07090E;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(0, 229, 255, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-run:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 229, 255, 0.45);
+    }
+
+    .btn-run:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-reset {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-reset:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Process Flow Visualizer (Node Pipeline) */
+    .flow-canvas {
+      background: rgba(7, 9, 14, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 24px;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .pipeline-step {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .pipeline-step.pending {
+      opacity: 0.6;
+    }
+
+    .pipeline-step.active {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px var(--primary-glow);
+      background: rgba(0, 229, 255, 0.05);
+      opacity: 1;
+    }
+
+    .pipeline-step.completed {
+      border-color: var(--green);
+      background: rgba(16, 185, 129, 0.05);
+      opacity: 1;
+    }
+
+    .pipeline-step.hitl {
+      border-color: var(--amber);
+      background: rgba(245, 158, 11, 0.08);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+      opacity: 1;
+    }
+
+    .step-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .step-idx {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+    }
+
+    .pipeline-step.active .step-idx {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+    }
+
+    .pipeline-step.completed .step-idx {
+      background: var(--green);
+      color: #000;
+      border-color: var(--green);
+    }
+
+    .pipeline-step.hitl .step-idx {
+      background: var(--amber);
+      color: #000;
+      border-color: var(--amber);
+    }
+
+    .step-info h4 {
+      font-size: 14.5px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .step-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .step-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tool-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+    }
+
+    .status-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge.idle { background: rgba(255, 255, 255, 0.05); color: var(--text-dim); }
+    .status-badge.running { background: rgba(0, 229, 255, 0.15); color: var(--primary); animation: pulse 1.5s infinite; }
+    .status-badge.done { background: rgba(16, 185, 129, 0.15); color: var(--green); }
+    .status-badge.review { background: rgba(245, 158, 11, 0.2); color: var(--amber); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .step-connector {
+      width: 2px;
+      height: 16px;
+      background: var(--card-border);
+      margin-left: 36px;
+      transition: background 0.3s ease;
+    }
+
+    .step-connector.active {
+      background: var(--primary);
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    /* Live Agent Inspection & Logs Panel */
+    .agent-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-inspect {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .console-box {
+      background: #030407;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: #CBD5E1;
+      height: 280px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    .log-line {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .log-time { color: var(--text-dim); }
+    .log-tag { color: var(--primary); font-weight: 600; }
+    .log-tag.amber { color: var(--amber); }
+    .log-tag.green { color: var(--green); }
+    .log-text { flex: 1; word-break: break-all; }
+
+    /* HITL Interactive Modal / Box */
+    .hitl-box {
+      margin-top: 16px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 14px;
+      display: none;
+    }
+
+    .hitl-box.visible {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .hitl-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+
+    .hitl-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .hitl-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-approve {
+      background: var(--green);
+      color: #000;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-reject {
+      background: rgba(239, 68, 68, 0.2);
+      color: #F87171;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Founder's Associate ROI Analytics Strip */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .metric-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .metric-val {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .metric-val .unit {
+      font-size: 13px;
+      color: var(--primary);
+    }
+
+    .metric-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Bottom Philosophy / Pitch Note */
+    .pitch-card {
+      margin-top: 32px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(0, 229, 255, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: 20px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .pitch-text h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .pitch-text p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      max-width: 800px;
+    }
+
+    .pitch-cta {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-cta {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-cta:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-cta.primary {
+      background: var(--primary);
+      color: #07090E;
+      border: none;
+      box-shadow: 0 4px 16px var(--primary-glow);
+    }
+
+    .btn-cta.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav -->
+  <header>
+    <div class="nav-container">
+      <a href="https://marblecognition.com" target="_blank" class="brand">
+        <div class="brand-logo">M</div>
+        <div>
+          <span class="brand-title">Marble Cognition</span>
+          <span class="brand-badge">Simulator</span>
+        </div>
+      </a>
+
+      <div class="author-pill">
+        <span>Engineered by <strong>Usman Ali</strong></span>
+        <span>•</span>
+        <a href="https://usmanali-hub.github.io/Ai-portfolio/" target="_blank">View AI Portfolio →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-tag">Workflow Capture &amp; Autonomous Agent Simulator</div>
+      <h1 class="hero-title">From Unwritten Desktop Workflows to Autonomous AI Coworkers</h1>
+      <p class="hero-desc">
+        Demonstration for Marble Cognition’s leadership team (Felix Rösner, Christophe Schmit, Luis Hettrich). 
+        Illustrates how Marble captures human enterprise workflows, constructs structured execution graphs, deploys AI coworkers, and incorporates human-in-the-loop safeguards.
+      </p>
+
+      <div class="workflow-nav">
+        <button class="wf-btn active" onclick="switchWorkflow('ap_reconciliation')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          1. Accounts Payable &amp; ERP Reconciliation
+        </button>
+        <button class="wf-btn" onclick="switchWorkflow('insurance_intake')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          2. Insurance Intake &amp; Policy Validation
+        </button>
+        <button class="wf-btn" onclick="switchWorkflow('customer_escalation')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          3. Multi-App Customer Ops &amp; Routing
+        </button>
+      </div>
+    </section>
+
+    <!-- Simulation Workspace -->
+    <div class="simulation-grid">
+      <!-- Left: Process Flow & Nodes -->
+      <div class="graph-panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span id="wf-title">Accounts Payable &amp; ERP Reconciliation</span>
+          </div>
+          <div class="panel-actions">
+            <button class="btn-reset" onclick="resetSimulation()">Reset</button>
+            <button class="btn-run" id="run-btn" onclick="startSimulation()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Run AI Coworker
+            </button>
+          </div>
+        </div>
+
+        <div class="flow-canvas" id="flow-canvas">
+          <!-- Dynamically populated steps -->
+        </div>
+      </div>
+
+      <!-- Right: Real-time Inspection & HITL -->
+      <div class="agent-panel">
+        <div class="card-inspect">
+          <div class="panel-header" style="margin-bottom:12px;padding-bottom:10px;">
+            <div class="panel-title" style="font-size:15px;">
+              <span style="display:inline-block;width:8px;height:8px;background:var(--primary);border-radius:50%;box-shadow:0 0 8px var(--primary);"></span>
+              Live Agent Telemetry &amp; Logs
+            </div>
+            <span class="tool-badge" id="agent-state">AGENT: IDLE</span>
+          </div>
+
+          <div class="console-box" id="console-box">
+            <div class="log-line">
+              <span class="log-time">[00:00:00]</span>
+              <span class="log-tag">[SYSTEM]</span>
+              <span class="log-text">Marble Execution Engine v2.4 initialized. Ready for process execution.</span>
+            </div>
+          </div>
+
+          <!-- Human-in-the-Loop Safeguard Trigger Box -->
+          <div class="hitl-box" id="hitl-box">
+            <div class="hitl-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              HUMAN-IN-THE-LOOP CHECKPOINT REQUIRED
+            </div>
+            <p class="hitl-desc" id="hitl-desc">
+              Invoice line item discrepancy detected ($14,250 vs PO $14,000, 1.7% variance). Confidence score: 86.4% (Threshold: 95%). Awaiting manual approval.
+            </p>
+            <div class="hitl-actions">
+              <button class="btn-approve" onclick="resolveHITL(true)">Approve &amp; Continue Execution</button>
+              <button class="btn-reject" onclick="resolveHITL(false)">Reject &amp; Flag for Audit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security & Governance Snapshot -->
+        <div class="card-inspect">
+          <div class="panel-header" style="margin-bottom:12px;padding-bottom:10px;">
+            <div class="panel-title" style="font-size:15px;">Enterprise Privacy &amp; Data Governance</div>
+          </div>
+          <div style="font-size:12.5px;color:var(--text-muted);display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;">
+              <span>Client Data Redaction:</span>
+              <strong style="color:var(--green);">PII Masked (Automated)</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span>Recording Storage:</span>
+              <strong style="color:var(--text);">EU Sovereign VPC (Munich)</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span>Audit Logging:</span>
+              <strong style="color:var(--primary);">Cryptographically Signed</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Founder's Associate Operational ROI Strip -->
+    <section>
+      <div style="margin-bottom:16px;">
+        <h2 style="font-family:var(--font-display);font-size:20px;font-weight:700;">Operational ROI &amp; Founder's Associate Impact</h2>
+        <p style="font-size:13px;color:var(--text-muted);">Projected impact of deploying Marble AI Coworkers across 100 monthly workflow runs.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Cycle Time Reduction</div>
+          <div class="metric-val">87<span class="unit">%</span></div>
+          <p class="metric-sub">From 42 min average to 5.4 min</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Human Review Needed</div>
+          <div class="metric-val">4.8<span class="unit">%</span></div>
+          <p class="metric-sub">95.2% autonomous straight-through rate</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Annual Hours Reclaimed</div>
+          <div class="metric-val">1,820<span class="unit">hrs</span></div>
+          <p class="metric-sub">Equivalent to 1.1 full-time team members</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Error Rate Reduction</div>
+          <div class="metric-val">99.2<span class="unit">%</span></div>
+          <p class="metric-sub">Zero manual data entry typos into ERP</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pitch & Alignment Note -->
+    <div class="pitch-card">
+      <div class="pitch-text">
+        <h3>Why Usman Ali for Marble Cognition?</h3>
+        <p>
+          "At ReplyPops and XEN Groups, I spent hundreds of hours bridging the gap between messy user actions and autonomous multi-agent pipelines. 
+          As a Founder's Associate Intern, I won't just take meeting notes—I will map real client workflows, prototype agent pipelines with speed, and act as a relentless force multiplier for Felix and Christophe."
+        </p>
+      </div>
+      <div class="pitch-cta">
+        <a href="https://usmanali-hub.github.io/Ai-portfolio/" target="_blank" class="btn-cta primary">Explore Full Portfolio</a>
+        <a href="https://linkedin.com/in/usman-ali-ai-engineer" target="_blank" class="btn-cta">LinkedIn Profile</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Workflows Configuration
+    const workflows = {
+      ap_reconciliation: {
+        title: "Accounts Payable & ERP Reconciliation",
+        desc: "Ingests raw vendor PDF invoices, parses line items, cross-checks against SAP Purchase Orders, and executes payment approval.",
+        steps: [
+          {
+            id: 1,
+            title: "Ingest Unstructured Vendor Invoice",
+            desc: "Extracts invoice PDF from shared accounts inbox, runs OCR, and structures header & line items.",
+            tool: "Document Vision / OCR",
+            action: "Parsing PDF metadata and payment terms..."
+          },
+          {
+            id: 2,
+            title: "ERP Match (SAP / NetSuite PO Lookup)",
+            desc: "Queries internal ERP API for matching Purchase Order #PO-94819 and vendor tax ID.",
+            tool: "SAP REST Connector",
+            action: "Connecting to SAP NetWeaver, fetching open order..."
+          },
+          {
+            id: 3,
+            title: "Three-Way Line Item Reconciliation",
+            desc: "Compares unit quantities, tax rates, and delivered amounts between invoice and warehouse goods receipt.",
+            tool: "Deterministic Math Engine",
+            action: "Reconciling 14 items... Variance detected on item #8 ($250 shipping surcharge).",
+            isHITL: true
+          },
+          {
+            id: 4,
+            title: "General Ledger Posting & Payment Schedule",
+            desc: "Records credited accounts payable entry in ERP and schedules SEPA payout via banking API.",
+            tool: "ERP Ledger & Banking API",
+            action: "Posting to GL Account 21000 (Accounts Payable). Payout scheduled."
+          },
+          {
+            id: 5,
+            title: "Audit Trail & Slack Notification",
+            desc: "Dispatches summary message to #finance-ops with signed verification receipt.",
+            tool: "Slack Webhook / Audit Vault",
+            action: "Encrypted audit receipt stored in sovereign EU vault. Notification sent."
+          }
+        ]
+      },
+
+      insurance_intake: {
+        title: "Insurance Claim Intake & Policy Validation",
+        desc: "Processes submitted claimant photos and damage narratives, checks coverage limits, and prepares initial settlement estimates.",
+        steps: [
+          {
+            id: 1,
+            title: "Multi-Modal Claim Ingestion",
+            desc: "Parses submitted mobile claim photos, damage description, and police report ID.",
+            tool: "Multi-Modal Vision Agent",
+            action: "Evaluating bumper damage photos and timestamp metadata..."
+          },
+          {
+            id: 2,
+            title: "Core Policy & Deductible Verification",
+            desc: "Validates active comprehensive coverage, deductible tier, and premium status in Guidewire.",
+            tool: "Guidewire Policy Center",
+            action: "Policy active. Comprehensive coverage confirmed ($500 deductible)."
+          },
+          {
+            id: 3,
+            title: "Fraud Anomaly & Duplication Check",
+            desc: "Cross-references damage hashes against national claims fraud database.",
+            tool: "Graph Neural Anomaly Model",
+            action: "Checking risk heuristics... Zero duplicate claims detected. Fraud risk: 2.1%.",
+            isHITL: false
+          },
+          {
+            id: 4,
+            title: "Claim Adjuster Reserve Calculation",
+            desc: "Generates estimated repair payout range based on regional parts pricing index.",
+            tool: "Pricing Index API",
+            action: "Calculated repair baseline: €2,480. High-value repair requires adjuster approval.",
+            isHITL: true
+          },
+          {
+            id: 5,
+            title: "Client Status Dispatch & Repair Assignment",
+            desc: "Sends automated SMS/WhatsApp claim tracking link and assigns approved body shop partner.",
+            tool: "Twilio / Partner Portal",
+            action: "Claim #CLM-83921 assigned to certified repair network."
+          }
+        ]
+      },
+
+      customer_escalation: {
+        title: "Multi-App Customer Ops & Priority Routing",
+        desc: "Captures high-tier customer exception tickets across Zendesk, checks HubSpot churn risk, and generates synthesized resolution.",
+        steps: [
+          {
+            id: 1,
+            title: "Omnichannel Ticket Ingestion & Sentiment Analysis",
+            desc: "Monitors Zendesk and email queue, classifies sentiment and urgency in real-time.",
+            tool: "Claude 3.5 Sonnet / NLU",
+            action: "Urgency: High (API Outage complaint from Tier-1 Enterprise account)."
+          },
+          {
+            id: 2,
+            title: "CRM & Contract Value Extraction",
+            desc: "Extracts ARR, renewal date, and dedicated CSM contact from HubSpot CRM.",
+            tool: "HubSpot API",
+            action: "Account: FinTech Global (ARR: $140,000/yr). Churn risk elevated."
+          },
+          {
+            id: 3,
+            title: "Technical Incident Telemetry Corroboration",
+            desc: "Queries Datadog APM for matching 502/504 errors on customer tenant gateway.",
+            tool: "Datadog Telemetry API",
+            action: "Matched 34 dropped requests between 14:10 - 14:22 UTC. Root cause: rate limiter bug."
+          },
+          {
+            id: 4,
+            title: "Synthesize Resolution & Compensation Proposal",
+            desc: "Drafts executive post-mortem explanation and 10% SLA credit voucher.",
+            tool: "Agentic Reasoning Scaffold",
+            action: "Draft prepared with technical apology and SLA rebate calculation.",
+            isHITL: true
+          },
+          {
+            id: 5,
+            title: "Execute Client Response & Jira Escalation",
+            desc: "Transmits verified resolution to customer and opens P1 engineering bug ticket.",
+            tool: "Zendesk & Atlassian Jira",
+            action: "Customer emailed by CSM proxy. Jira ticket #ENG-4891 created."
+          }
+        ]
+      }
+    };
+
+    let currentWfKey = 'ap_reconciliation';
+    let isRunning = false;
+    let stepIndex = 0;
+    let executionTimer = null;
+
+    function renderWorkflow() {
+      const wf = workflows[currentWfKey];
+      document.getElementById('wf-title').innerText = wf.title;
+      const canvas = document.getElementById('flow-canvas');
+      canvas.innerHTML = '';
+
+      wf.steps.forEach((step, idx) => {
+        const stepEl = document.createElement('div');
+        stepEl.className = 'pipeline-step pending';
+        stepEl.id = `step-card-${idx}`;
+
+        stepEl.innerHTML = `
+          <div class="step-left">
+            <div class="step-idx">${step.id}</div>
+            <div class="step-info">
+              <h4>${step.title}</h4>
+              <p>${step.desc}</p>
+            </div>
+          </div>
+          <div class="step-meta">
+            <span class="tool-badge">${step.tool}</span>
+            <span class="status-badge idle" id="status-badge-${idx}">Idle</span>
+          </div>
+        `;
+
+        canvas.appendChild(stepEl);
+
+        if (idx < wf.steps.length - 1) {
+          const connector = document.createElement('div');
+          connector.className = 'step-connector';
+          connector.id = `connector-${idx}`;
+          canvas.appendChild(connector);
+        }
+      });
+    }
+
+    function switchWorkflow(key) {
+      if (isRunning) return;
+      currentWfKey = key;
+      document.querySelectorAll('.wf-btn').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      resetSimulation();
+      log('SYSTEM', `Switched workflow context to: ${workflows[key].title}`);
+    }
+
+    function log(tag, message, colorClass = '') {
+      const box = document.getElementById('console-box');
+      const time = new Date().toTimeString().split(' ')[0];
+      const line = document.createElement('div');
+      line.className = 'log-line';
+      line.innerHTML = `
+        <span class="log-time">[${time}]</span>
+        <span class="log-tag ${colorClass}">[${tag}]</span>
+        <span class="log-text">${message}</span>
+      `;
+      box.appendChild(line);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function startSimulation() {
+      if (isRunning) return;
+      isRunning = true;
+      stepIndex = 0;
+      document.getElementById('run-btn').disabled = true;
+      document.getElementById('agent-state').innerText = 'AGENT: RUNNING';
+      document.getElementById('agent-state').style.color = 'var(--primary)';
+      log('COWORKER', `Starting autonomous agent execution for: ${workflows[currentWfKey].title}`);
+      executeStep();
+    }
+
+    function executeStep() {
+      const wf = workflows[currentWfKey];
+      if (stepIndex >= wf.steps.length) {
+        completeWorkflow();
+        return;
+      }
+
+      const step = wf.steps[stepIndex];
+      const card = document.getElementById(`step-card-${stepIndex}`);
+      const badge = document.getElementById(`status-badge-${stepIndex}`);
+      
+      card.className = 'pipeline-step active';
+      badge.className = 'status-badge running';
+      badge.innerText = 'Executing';
+
+      log('STEP ' + (stepIndex + 1), step.action);
+
+      // Check for HITL
+      if (step.isHITL) {
+        setTimeout(() => {
+          card.className = 'pipeline-step hitl';
+          badge.className = 'status-badge review';
+          badge.innerText = 'HITL Review';
+          document.getElementById('agent-state').innerText = 'AGENT: AWAITING SIGN-OFF';
+          document.getElementById('agent-state').style.color = 'var(--amber)';
+          document.getElementById('hitl-desc').innerText = `Confidence score: 87.2% on ${step.title}. Agent flagged policy/amount check for human verification.`;
+          document.getElementById('hitl-box').classList.add('visible');
+          log('HITL', `Paused for human decision on: ${step.title}`, 'amber');
+        }, 1200);
+      } else {
+        setTimeout(() => {
+          finishStep();
+        }, 1600);
+      }
+    }
+
+    function resolveHITL(approved) {
+      document.getElementById('hitl-box').classList.remove('visible');
+      if (approved) {
+        log('HUMAN-IN-LOOP', 'Decision APPROVED by operator. Resuming automated pipeline...', 'green');
+        finishStep();
+      } else {
+        log('HUMAN-IN-LOOP', 'Decision REJECTED by operator. Task diverted to escalation branch.', 'amber');
+        completeWorkflow(true);
+      }
+    }
+
+    function finishStep() {
+      const card = document.getElementById(`step-card-${stepIndex}`);
+      const badge = document.getElementById(`status-badge-${stepIndex}`);
+      const connector = document.getElementById(`connector-${stepIndex}`);
+
+      card.className = 'pipeline-step completed';
+      badge.className = 'status-badge done';
+      badge.innerText = 'Completed';
+
+      if (connector) {
+        connector.className = 'step-connector active';
+      }
+
+      stepIndex++;
+      setTimeout(executeStep, 600);
+    }
+
+    function completeWorkflow(diverted = false) {
+      isRunning = false;
+      document.getElementById('run-btn').disabled = false;
+      document.getElementById('agent-state').innerText = 'AGENT: COMPLETED';
+      document.getElementById('agent-state').style.color = 'var(--green)';
+      if (diverted) {
+        log('SUCCESS', 'Workflow safely routed to manual audit queue with full trace audit.', 'amber');
+      } else {
+        log('SUCCESS', `Workflow completed autonomously in 6.4s with 100% deterministic safety.`, 'green');
+      }
+    }
+
+    function resetSimulation() {
+      isRunning = false;
+      stepIndex = 0;
+      document.getElementById('run-btn').disabled = false;
+      document.getElementById('agent-state').innerText = 'AGENT: IDLE';
+      document.getElementById('agent-state').style.color = 'var(--text-muted)';
+      document.getElementById('hitl-box').classList.remove('visible');
+      renderWorkflow();
+    }
+
+    // Initialize
+    renderWorkflow();
+  </script>
+</body>
+</html>
